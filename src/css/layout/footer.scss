@@ -1,0 +1,32 @@
+.woobits-site-footer {
+    @extend .jumbotron, .jumbotron-fluid;
+    background: linear-gradient(190deg, #1e0051, #3b009e);
+    color: white;
+    margin-bottom: 0;
+
+    .sidebars {
+        @extend .container, .d-flex, .flex-column, .flex-md-row;
+
+        .widget {
+            @extend .col-12, .col-md-3;
+
+            .title {
+                font-weight: 700;
+                margin-bottom: 0.75em;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+
+            * {
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}

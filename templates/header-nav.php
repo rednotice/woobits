@@ -7,26 +7,26 @@
 
 ?>
 
-<nav class="woobits-navbar navbar navbar-expand-lg p-lg-4">
+<nav class="woobits-navbar">
     <?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
         the_custom_logo();
     } else {
-        echo '<a href="' . get_home_url() . '" class="navbar-brand">';
+        echo '<a href="' . get_home_url() . '" class="brand">';
         echo get_bloginfo( 'name' );
         echo '</a>';
     } ?>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon"></span>
     </button>
 
     <?php
         wp_nav_menu( 
             [ 
                 'theme_location' => 'main-menu',
-                'container_class' => 'woobits-menu-container collapse navbar-collapse',
+                'container_class' => 'container',
                 'container_id' => 'navbarSupportedContent',
-                'menu_class' => 'woobits-main-menu navbar-nav mr-auto',
+                'menu_class' => 'menu',
             ] 
         );
     ?>

@@ -15,7 +15,7 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <div class="woobits-blog-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-md-9'; endif; ?> ">
+    <div class="woobits-blog-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-lg-9'; endif; ?> ">
 
         <?php if( have_posts() ): while( have_posts() ): the_post();?>
 
@@ -26,7 +26,7 @@
     </div>
 
     <?php if( is_active_sidebar( 'blog-sidebar' ) ): ?>
-        <div class="woobits-sidebar col-12 col-md-3">
+        <div class="woobits-blog-sidebar col-12 col-lg-3">
             <?php dynamic_sidebar( 'blog-sidebar' ); ?>
         </div>
     <?php endif; ?>

@@ -1,3 +1,6 @@
-- Refactor css code to sass
 
-- Use css grid?
+- Post Preview
+
+- Blog sidebar
+
+- Blog Single

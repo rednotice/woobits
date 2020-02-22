@@ -2,8 +2,19 @@
 // @import '../../../../../wp-includes/css/dist/block-library/style.css';
 
 // Bootstrap
-@import '../bootstrap/css/bootstrap.min.css';
-@import '../bootstrap/css/bootstrap-grid.min.css';
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
-// Custom Styles
-@import '/old.scss';
+// Variables
+@import './base/variables.scss';
+
+// Helpers
+@import './base/helpers.scss';
+
+// Layouts
+@import './layout/body.scss';
+@import './layout/header.scss';
+@import './layout/footer.scss';
+
+// Components
+@import './components/post-preview.scss';
+@import './components/sidebar-widget.scss';

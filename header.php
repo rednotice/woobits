@@ -23,8 +23,8 @@
 
         <?php get_template_part( 'templates/header', 'nav' ) ?>
         
-        <?php if( ! is_front_page() ): get_template_part( 'templates/header', 'jumbotron' ); endif; ?>
+        <?php if( ! is_front_page() ): get_template_part( 'templates/header', 'banner' ); endif; ?>
 
     </header>
 
-    <div class="container woobits-site-content">
+    <section class="woobits-site-content">

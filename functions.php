@@ -93,7 +93,7 @@ function register_footer_widgets() {
 		'description' => __( 'Appears on the first footer column.', 'woobits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="woobits-widget-title">',
+		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
 	) );
 
@@ -104,7 +104,7 @@ function register_footer_widgets() {
 		'description' => __( 'Appears on the second footer column.', 'woobits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="woobits-widget-title">',
+		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
 	) );
 
@@ -115,7 +115,7 @@ function register_footer_widgets() {
 		'description' => __( 'Appears on the third footer column.', 'woobits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="woobits-widget-title">',
+		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
 	) );
 
@@ -126,7 +126,7 @@ function register_footer_widgets() {
 		'description' => __( 'Appears on the fourth footer column.', 'woobits' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="woobits-widget-title">',
+		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
 	) );
 
@@ -139,9 +139,9 @@ function register_blog_sidebar() {
 		'name' => __( 'Blog Sidebar', 'woobits' ),
 		'id' => 'blog-sidebar',
 		'description' => __( 'Appears on the right side of all blog pages.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+		'before_widget' => '<aside id="%1$s" class="woobits-sidebar-widget widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="woobits-widget-title">',
+		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
     ) );
 }
