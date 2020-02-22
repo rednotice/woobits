@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
@@ -24,5 +25,9 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "popper.js": "^1.16.1"
   }
 }

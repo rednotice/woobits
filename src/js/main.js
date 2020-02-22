@@ -1,1 +1,2 @@
-console.log('Lol');
+// Bootstrap
+import 'bootstrap';
