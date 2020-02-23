@@ -1,8 +1,7 @@
 const path = require('path');
-
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -51,7 +50,7 @@ module.exports = {
     })
   ],
   externals: {
-    jQuery: 'jQuery'
+    jquery: 'jQuery'
   },
   optimization: {
     minimizer: [

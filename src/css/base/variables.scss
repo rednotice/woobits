@@ -1,6 +1,11 @@
 // Colors
-$primary:   $indigo;
+$primary:   #6610f2;
 $light:   #e9edf7;
+
+$theme-colors: (
+  primary: $primary,
+  light: $light
+);
 
 // Shaped
 $border-radius: 3px;

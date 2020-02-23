@@ -4,3 +4,6 @@
  * 
  * @package woobits
  */
+?>
+
+ This is the error page.

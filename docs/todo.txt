@@ -1,6 +1,1 @@
-
-- Post Preview
-
-- Blog sidebar
-
-- Blog Single
+- Blog Single Post

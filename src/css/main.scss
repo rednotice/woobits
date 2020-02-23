@@ -1,14 +1,14 @@
 // Guttenberg and Block Editor Styles (columns etc)
 // @import '../../../../../wp-includes/css/dist/block-library/style.css';
 
-// Bootstrap
-@import '../../node_modules/bootstrap/scss/bootstrap';
-
 // Variables
 @import './base/variables.scss';
 
-// Helpers
-@import './base/helpers.scss';
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Default html element styles
+@import './base/elements.scss';
 
 // Layouts
 @import './layout/body.scss';

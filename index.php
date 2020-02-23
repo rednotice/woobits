@@ -14,7 +14,9 @@
 
 <?php get_header(); ?>
 
-<div class="row">
+This is the index.
+
+<!-- <div class="row">
     <div class="woobits-blog-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-lg-9'; endif; ?> ">
 
         <?php if( have_posts() ): while( have_posts() ): the_post();?>
@@ -30,6 +32,6 @@
             <?php dynamic_sidebar( 'blog-sidebar' ); ?>
         </div>
     <?php endif; ?>
-</div>
+</div> -->
 
 <?php get_footer(); ?>

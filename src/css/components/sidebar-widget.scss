@@ -1,6 +1,6 @@
 .woobits-sidebar-widget {
     background-color: $light;
-    padding-bottom: 1em;
+    padding: 1.5em;
     margin-bottom: 1.5em;
     border-radius: $border-radius;
 
@@ -8,7 +8,15 @@
         background: linear-gradient(190deg, #1e0051, #3b009e);
         text-align: center;
         color: white;
-        padding: .5em;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: -1.5em -1.5em 1.5em -1.5em;
+        padding: 1.5em;
         border-radius: $border-radius;
+
+        // & + * {
+        //     margin: 0;
+        //     padding: 0;
+        // }
     }
 }

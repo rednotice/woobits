@@ -141,8 +141,8 @@ function register_blog_sidebar() {
 		'description' => __( 'Appears on the right side of all blog pages.', 'woobits' ),
 		'before_widget' => '<aside id="%1$s" class="woobits-sidebar-widget widget %2$s clearfix">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="title">',
-		'after_title' => '</h4>',
+		'before_title' => '<h6 class="title">',
+		'after_title' => '</h6>',
     ) );
 }
 add_action( 'widgets_init', 'register_blog_sidebar', 10 );
