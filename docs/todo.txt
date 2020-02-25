@@ -1,1 +1,27 @@
-- Blog Single Post
+- Home
+
+- Comments
+
+- Archive
+
+- Search
+
+- 404
+
+- Index
+
+- Bar under Footer
+
+- Html elements
+
+- WooCommerce Pages
+
+- Add cart, search and account icons to nav
+
+
+
+- Cleanup & comment code
+
+- Custumization options
+
+- License

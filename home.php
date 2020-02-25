@@ -15,7 +15,11 @@
 
             <?php get_template_part( 'templates/post', 'preview' ) ?>
             
-        <?php endwhile; else: endif; ?>
+        <?php endwhile; ?>
+
+        <?php wp_link_pages(); ?> <!-- Doesnt show -->
+        
+        <?php else: endif; ?>
 
     </div>
 
@@ -25,7 +29,5 @@
         </div>
     <?php endif; ?>
 </div>
-
-Add Pagination
 
 <?php get_footer(); ?>

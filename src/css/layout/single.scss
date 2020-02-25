@@ -1,0 +1,46 @@
+.woobits-single-post {
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+
+    .categories, .tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1em;
+        line-height: 2.5em;
+
+        .heading {
+            font-weight: 600;
+        }
+
+        .category, .tag {
+            font-size: small;
+            font-weight: 600;
+            padding: .5em .75em;
+            margin: .5em;
+            border-radius: 20%/50%;
+
+        }
+
+        .category {
+            background-color: $primary;
+            color: white;
+
+            &:hover {
+                background-color: $light;
+                color: $primary;
+            }
+        }
+
+        .tag {
+            background-color: $light;
+
+            &:hover {
+                background-color: $primary;
+                color: white;
+            }
+        }
+    }
+}

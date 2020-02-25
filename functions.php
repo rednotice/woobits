@@ -6,9 +6,15 @@
  * @package woobits
  */
 
-// Theme Scripts
+// class Woobits_Walker_Nav_Menu extends Walker_Nav_Menu 
+// {
+// 	function start_lvl(&$output, $depth, $args ) {
+// 		$indent = str_repeat("\t", $depth);
+// 		$output .= "\n$indent<ul class=\"sub-menu sub-menu-" . $depth . "\">\n";
+// 	}
+// }
 
-// register webpack stylesheet and js with theme
+// Theme Scripts
 function load_css() {
         wp_dequeue_style( 'wp-block-library' ); // Remove default guttenberg block editor stylesheet
 
@@ -42,8 +48,7 @@ add_theme_support( 'title-tag' );
 // Menus
 register_nav_menus(
     [
-        'main-menu' => __('Main Menu', 'woobits'),
-        'mobile-menu' => __('Mobile Menu', 'woobits')
+        'main-menu' => __('Main Menu', 'woobits')
     ]
 );
 
@@ -51,16 +56,23 @@ function add_nav_classes( $classes, $item ) {
     $classes[] = 'nav-item';
     if ( in_array( 'current-menu-item', $classes ) ) {
         $classes[] = 'active';
-    }
+	}
+
     return $classes;
 }
 add_filter( 'nav_menu_css_class' , 'add_nav_classes', 10, 2 );
 
-function add_nav_link_classes( $atts ) {
-    $atts[ 'class' ] = "nav-link";
-    return $atts;
+function add_nav_link_attributes( $atts, $item, $args ) {
+	$atts[ 'class' ] = 'nav-link';
+	return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'add_nav_link_classes' );
+add_filter( 'nav_menu_link_attributes', 'add_nav_link_attributes', 10, 3 );
+
+function add_nav_menu_submenu_css_class( $classes, $args, $depth ) {
+	$classes[] = 'sub-menu-' . $depth;
+	return $classes;
+}
+add_filter( 'nav_menu_submenu_css_class', 'add_nav_menu_submenu_css_class', 10, 3 );
 
 // Breadcrumbs
 function the_breadcrumb() {

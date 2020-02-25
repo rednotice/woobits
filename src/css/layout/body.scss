@@ -9,7 +9,7 @@ body {
 
         &:hover,
         &:active {
-            opacity: 0.75;
+            @include alpha-color( $primary );
             text-decoration: none;
         }
 

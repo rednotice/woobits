@@ -27,6 +27,7 @@
                 'container_class' => 'container',
                 'container_id' => 'navbarSupportedContent',
                 'menu_class' => 'menu',
+                'menu_id' => 'woobits-main-menu'
             ] 
         );
     ?>

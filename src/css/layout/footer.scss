@@ -4,6 +4,14 @@
     color: white;
     margin-bottom: 0;
 
+    a {
+        color: inherit;
+
+        &:hover {
+            @include alpha-color( white );
+        }
+    }
+
     .sidebars {
         @extend .container, .d-flex, .flex-column, .flex-md-row;
 
@@ -24,9 +32,5 @@
                 margin-left: 0;
             }
         }
-    }
-
-    a {
-        color: inherit;
     }
 }

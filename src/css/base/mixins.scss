@@ -1,0 +1,7 @@
+@mixin alpha-color( $color, $alpha: .75 ) {
+    color: rgba( $color, $alpha );
+}
+
+@mixin alpha-background-color( $color, $alpha: .75 ) {
+    background-color: rgba( $color, $alpha );
+}
