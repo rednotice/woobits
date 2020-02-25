@@ -10,4 +10,6 @@
 
 <?php get_template_part( 'templates/content' ); ?>
 
+<?php if ( comments_open() ): comments_template(); endif;?>
+
 <?php get_footer(); ?>

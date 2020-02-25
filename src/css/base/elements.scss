@@ -1,3 +1,20 @@
 button {
     @extend .btn, .btn-primary;
+    border-radius: $border-radius;
+}
+
+input {
+    @extend .form-control;
+}
+
+input[type="checkbox"] {
+    @extend .form-check-input;
+
+    + label {
+        @extend .form-check-label;
+    }
+}
+
+textarea {
+    @extend .form-control;
 }

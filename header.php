@@ -29,4 +29,4 @@
 
     </header>
 
-    <section class="woobits-site-content">
+    <section class="woobits-site-content container">

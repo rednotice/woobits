@@ -95,6 +95,9 @@ function the_breadcrumb() {
     }
 }
 
+// Comments
+require_once get_template_directory() . '/inc/class-woobits-walker-comment.php';
+
 // Footer
 function register_footer_widgets() {
 

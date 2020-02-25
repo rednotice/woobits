@@ -1,6 +1,9 @@
-- Home
-
 - Comments
+
+- Home
+    - Navigation
+    - Image Size
+    - Comments don't show
 
 - Archive
 
@@ -10,9 +13,7 @@
 
 - Index
 
-- Bar under Footer
-
-- Html elements
+- Add Bar under Footer
 
 - WooCommerce Pages
 

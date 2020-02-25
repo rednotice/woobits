@@ -1,0 +1,60 @@
+.woobits-comments {
+    @extend .row;
+    margin-bottom: 2em;
+
+    .wrapper {
+        @extend .col-12;
+
+        .heading {
+            margin-bottom: 1em;
+        }
+
+        .list {
+
+            .comment {
+                display: flex;
+                margin-bottom: 2em;
+
+                .comment-box {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 1em;
+
+                    .comment-meta {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        margin-bottom: .5em;
+
+                        .comment-author, .url {
+                            font-weight: bold;
+                        }
+
+                        .clear {
+                            width: 2em;
+                        }
+    
+                        .comment-date {
+                            font-size: small;
+                        }
+                    }
+                }
+
+                p {
+                    margin-bottom: .5em;
+                }
+            }
+
+        }
+
+        .comment-respond {
+            .comment-form-comment {
+                margin-bottom: 1em;
+
+                textarea {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
