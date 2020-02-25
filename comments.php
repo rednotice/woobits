@@ -51,9 +51,11 @@
         <?php 
         comment_form( array(
             'title_reply' => __( 'Leave a Comment', 'woobits' ),
-            'comment_field' => '<div class="comment-form-comment">
+            'comment_field' => 
+                '<div class="comment-form-comment">
                     <textarea id="comment" name="comment" rows="8" aria-required="true" required="required"></textarea>
-                </div>'
+                </div>',
+            'submit_button' => '<button class="%3$s" name="%1$s" type="submit" id="%2$s" value="%4$s">' . __( 'Post Comment', 'woobits' ) . '</button>'
         )); 
         ?>
     </div>

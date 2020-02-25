@@ -3,7 +3,7 @@ button {
     border-radius: $border-radius;
 }
 
-input {
+input:not([type="checkbox"]) {
     @extend .form-control;
 }
 

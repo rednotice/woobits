@@ -55,6 +55,14 @@
                     width: 100%;
                 }
             }
+
+            .comment-form-cookies-consent {
+                @extend .form-check;
+            }
+
+            .submit {
+                @extend .btn-block;
+            }
         }
     }
 }
