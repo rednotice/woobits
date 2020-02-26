@@ -23,7 +23,7 @@
 
         <?php get_template_part( 'templates/nav' ) ?>
         
-        <?php if( ! is_front_page() && ! is_single() ): get_template_part( 'templates/header' ); endif; ?>
+        <?php if( ! is_front_page() && ! is_single() && ! is_404() ): get_template_part( 'templates/header' ); endif; ?>
 
         <?php if( is_single() ): get_template_part( 'templates/header', 'post' ); endif; ?>
 

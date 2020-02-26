@@ -61,7 +61,7 @@
             }
 
             .submit {
-                @extend .btn-block;
+                @extend .btn-block, .btn-primary;
             }
         }
     }

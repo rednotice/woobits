@@ -1,0 +1,42 @@
+.woobits-404 {
+    @extend .row;
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+
+    .wrapper {
+        @extend .col-12;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .img-container {
+            width: 100%;
+            margin-bottom: 2em;
+
+            @media screen and (min-width: 768px) {
+                width: 75%;
+            }
+
+            @media screen and (min-width: 992px) {
+                width: 50%;
+            }
+
+            img {
+                @extend .img-fluid;
+            }
+        }
+
+        .text {
+            @extend .h1;
+            margin-bottom: 1em;
+        }
+
+        button {
+            @extend .btn, .btn-outline-light;
+        }
+    }
+}

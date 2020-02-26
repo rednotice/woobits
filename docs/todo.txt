@@ -7,7 +7,7 @@
 
 - Search
 
-- 404
+- Default widgets
 
 - WooCommerce Pages
 

@@ -1,6 +1,13 @@
 button {
-    @extend .btn, .btn-primary;
+    @extend .btn-primary;
+}
+
+button, .btn {
+    @extend .btn;
+    font-weight: 600 !important;
+    text-transform: uppercase;
     border-radius: $border-radius;
+    border: 2px solid !important;
 }
 
 input:not([type="checkbox"]) {

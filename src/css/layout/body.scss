@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    min-height: 100vh;
     color: #28375a;
 
     a {
