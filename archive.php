@@ -9,13 +9,23 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <div class="woobits-blog-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-lg-8'; endif; ?> ">
-
+    <div class="woobits-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-lg-8'; endif; ?> ">
         <?php if( have_posts() ): while( have_posts() ): the_post();?>
 
             <?php get_template_part( 'templates/post', 'preview' ) ?>
             
-        <?php endwhile; else: endif; ?>
+        <?php endwhile; ?>
+
+            <div class="pagination">
+                <div class="previous">
+                    <?php previous_posts_link(); ?>
+                </div>
+                <div class="next">
+                    <?php next_posts_link(); ?>
+                </div>
+            </div>
+        
+        <?php else: endif; ?>
 
     </div>
 
@@ -25,7 +35,5 @@
         </div>
     <?php endif; ?>
 </div>
-
-Add Pagination
 
 <?php get_footer(); ?>

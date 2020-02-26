@@ -1,12 +1,6 @@
-- Index
-    - Image Size
-    - Comments don't show
-
 - Archive
 
 - Search
-
-- Default widgets
 
 - WooCommerce Pages
 
@@ -15,6 +9,8 @@
 - Front Page
 
 
+- Bug Fixes:
+    - Post preview image size
 
 - Cleanup & comment code
 
