@@ -16,6 +16,9 @@
             <?php if(is_active_sidebar('footer-1')) { dynamic_sidebar('footer-4'); } ?>
         </div>
     </footer>
+    <section class="woobits-copyright">
+        <span>Copyright 2020 wpBits. All rights reserved.</span>
+    </section>
 
     <?php wp_footer(); ?>
 

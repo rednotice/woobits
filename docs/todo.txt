@@ -1,5 +1,3 @@
-- Add Bar under Footer
-
 - Index
     - Navigation
     - Image Size
