@@ -1,6 +1,6 @@
-- Archive
-
 - Search
+
+- Sidebar
 
 - WooCommerce Pages
 

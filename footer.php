@@ -6,7 +6,8 @@
  */
  ?>
 
-</section> <!-- Section site-content -->
+    </section> <!-- Section site-content -->
+</div> <!-- Container -->
 
     <footer class="woobits-site-footer">
         <div class="sidebars">
