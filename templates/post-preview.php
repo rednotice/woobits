@@ -22,15 +22,15 @@
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h3>
         <div class="meta">
-            <small><?php _e('By ', 'woobits') . the_author(); ?></small>
+            <small><?php _e( 'By ', 'woobits' ) . the_author(); ?></small>
 
-            <!-- Doesnt display correctly -->
-            <small><?php if ( the_date() ) : echo '| '; the_date(); endif; ?></small>
+            <?php the_date( '', '<small>| ', '</small>' ); ?>
 
             <?php if( comments_open() && get_comments_number() > 0 ): ?> 
                 <small>
+                    | 
                     <a href="<?php comments_link(); ?>">
-                        | <?php comments_number(); ?>
+                        <?php comments_number(); ?>
                     </a>
                 </small>    
             <?php endif; ?>
