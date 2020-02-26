@@ -1,6 +1,6 @@
-- Comments
+- Add Bar under Footer
 
-- Home
+- Index
     - Navigation
     - Image Size
     - Comments don't show
@@ -11,18 +11,16 @@
 
 - 404
 
-- Index
-
-- Add Bar under Footer
-
 - WooCommerce Pages
 
 - Add cart, search and account icons to nav
+
+- Front Page
 
 
 
 - Cleanup & comment code
 
-- Custumization options
+- Customization options
 
 - License

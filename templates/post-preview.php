@@ -24,7 +24,8 @@
         <div class="meta">
             <small><?php _e('By ', 'woobits') . the_author(); ?></small>
 
-            <small>| <?php the_date(); ?></small>
+            <!-- Doesnt display correctly -->
+            <small><?php if ( the_date() ) : echo '| '; the_date(); endif; ?></small>
 
             <?php if( comments_open() && get_comments_number() > 0 ): ?> 
                 <small>
