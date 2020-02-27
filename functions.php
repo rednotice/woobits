@@ -6,91 +6,24 @@
  * @package woobits
  */
 
-// class Woobits_Walker_Nav_Menu extends Walker_Nav_Menu 
-// {
-// 	function start_lvl(&$output, $depth, $args ) {
-// 		$indent = str_repeat("\t", $depth);
-// 		$output .= "\n$indent<ul class=\"sub-menu sub-menu-" . $depth . "\">\n";
-// 	}
-// }
+// Classes
+require_once get_template_directory() . '/inc/class-woobits-theme-support.php';
+require_once get_template_directory() . '/inc/class-woobits-menus.php';
+require_once get_template_directory() . '/inc/class-woobits-sidebars.php';
+require_once get_template_directory() . '/inc/class-woobits-walker-comment.php';
+require_once get_template_directory() . '/inc/class-woobits-scripts.php';
 
-// Theme Scripts
-function load_css() {
-        wp_dequeue_style( 'wp-block-library' ); // Remove default guttenberg block editor stylesheet
-
-        wp_enqueue_style( 'site_main_css', get_template_directory_uri() . '/dist/main.min.css' );
- }
- add_action( 'wp_enqueue_scripts', 'load_css' );
-
-function load_js() {
-    wp_register_script( 
-        'bundle_js', 
-        get_template_directory_uri() . '/dist/bundle.js', 
-        'jquery',
-        false,
-        true 
-    );
-    wp_enqueue_script( 'bundle_js' );
-}
-add_action( 'wp_enqueue_scripts', 'load_js' );
-
-// Theme Options
-add_theme_support( 'menus' );
-add_theme_support( 'custom-logo', array(
-    'height'      => 45,
-    'width'       => 140,
-    'flex-height' => true,
-    'flex-width'  => true,
-    'header-text' => array( 'site-title', 'site-description' )
-) );
-add_theme_support( 'title-tag' );
-
-// function woobits_add_woocommerce_support() {
-// 	$args = [
-// 		'thumbnail_image_width' => 150,
-//         'single_image_width'    => 300,
-
-//         'product_grid'          => array(
-//             'default_rows'    	=> 3,
-//             'min_rows'       	=> 2,
-//             'max_rows'        	=> 8,
-//             'default_columns' 	=> 4,
-//             'min_columns'    	=> 2,
-//             'max_columns'    	=> 5,
-//         )
-// 	];
-//     add_theme_support( 'woocommerce', $args );
-// }
-// add_action( 'after_setup_theme', 'woobits_add_woocommerce_support' );
-
-// Menus
-register_nav_menus(
-    [
-        'main-menu' => __('Main Menu', 'woobits')
-    ]
-);
-
-function add_nav_classes( $classes, $item ) {
-    $classes[] = 'nav-item';
-    if ( in_array( 'current-menu-item', $classes ) ) {
-        $classes[] = 'active';
+class Woobits {
+	public function __construct()
+	{
+		new Woobits_Theme_Support();
+		new Woobits_Menus();
+		new Woobits_Sidebars();
+		new Woobits_Walker_Comment();
+		new Woobits_Scripts();
 	}
-
-    return $classes;
 }
-add_filter( 'nav_menu_css_class' , 'add_nav_classes', 10, 2 );
-
-function add_nav_link_attributes( $atts, $item, $args ) {
-	$atts[ 'class' ] = 'nav-link';
-	return $atts;
-}
-add_filter( 'nav_menu_link_attributes', 'add_nav_link_attributes', 10, 3 );
-
-function add_nav_menu_submenu_css_class( $classes, $args, $depth ) {
-	$classes[] = 'sub-menu-' . $depth;
-	return $classes;
-}
-add_filter( 'nav_menu_submenu_css_class', 'add_nav_menu_submenu_css_class', 10, 3 );
+new Woobits();
 
 // Breadcrumbs
 function the_breadcrumb() {
@@ -112,80 +45,3 @@ function the_breadcrumb() {
         echo '</em>"';
     }
 }
-
-// Comments
-require_once get_template_directory() . '/inc/class-woobits-walker-comment.php';
-
-// Footer
-function register_footer_widgets() {
-
-	// Register Footer Column 1 widget area.
-	register_sidebar( array(
-		'name' => __( 'Footer Column 1', 'woobits' ),
-		'id' => 'footer-1',
-		'description' => __( 'Appears on the first footer column.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="title">',
-		'after_title' => '</h4>',
-	) );
-
-	// Register Footer Column 2 widget area.
-	register_sidebar( array(
-		'name' => __( 'Footer Column 2', 'woobits' ),
-		'id' => 'footer-2',
-		'description' => __( 'Appears on the second footer column.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="title">',
-		'after_title' => '</h4>',
-	) );
-
-	// Register Footer Column 3 widget area.
-	register_sidebar( array(
-		'name' => __( 'Footer Column 3', 'woobits' ),
-		'id' => 'footer-3',
-		'description' => __( 'Appears on the third footer column.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="title">',
-		'after_title' => '</h4>',
-	) );
-
-	// Register Footer Column 4 widget area.
-	register_sidebar( array(
-		'name' => __( 'Footer Column 4', 'woobits' ),
-		'id' => 'footer-4',
-		'description' => __( 'Appears on the fourth footer column.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4 class="title">',
-		'after_title' => '</h4>',
-	) );
-
-}
-add_action( 'widgets_init', 'register_footer_widgets', 20 );
-
-// Sidebars
-function woobits_register_sidebars() {
-	register_sidebar( array(
-		'name' => __( 'Blog Sidebar', 'woobits' ),
-		'id' => 'blog',
-		'description' => __( 'Appears on the right side of all blog pages.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="woobits-sidebar-widget widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h6 class="title">',
-		'after_title' => '</h6>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Product Page Sidebar', 'woobits' ),
-		'id' => 'product',
-		'description' => __( 'Appears on the right side of the product page.', 'woobits' ),
-		'before_widget' => '<aside id="%1$s" class="woobits-sidebar-widget widget %2$s clearfix">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h6 class="title">',
-		'after_title' => '</h6>',
-    ) );
-}
-add_action( 'widgets_init', 'woobits_register_sidebars', 10 );

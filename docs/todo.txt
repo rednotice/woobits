@@ -1,4 +1,12 @@
-- WooCommerce Pages
+- Single Product
+
+- Product Index
+
+- Cart
+
+- Checkout
+
+- My Account
 
 - Add cart, search and account icons to nav
 
