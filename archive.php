@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <div class="woobits-posts col-12 <?php if( is_active_sidebar( 'blog-sidebar' ) ) : echo 'col-lg-8'; endif; ?> ">
+    <div class="woobits-posts col-12 <?php if( is_active_sidebar( 'blog' ) ) : echo 'col-lg-8'; endif; ?> ">
         <?php if( have_posts() ): while( have_posts() ): the_post();?>
 
             <?php get_template_part( 'templates/post', 'preview' ) ?>
@@ -29,9 +29,9 @@
 
     </div>
 
-    <?php if( is_active_sidebar( 'blog-sidebar' ) ): ?>
+    <?php if( is_active_sidebar( 'blog' ) ): ?>
         <div class="woobits-blog-sidebar col-12 col-lg-4">
-            <?php dynamic_sidebar( 'blog-sidebar' ); ?>
+            <?php dynamic_sidebar( 'blog' ); ?>
         </div>
     <?php endif; ?>
 </div>

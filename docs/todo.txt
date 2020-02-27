@@ -1,7 +1,3 @@
-- Search
-
-- Sidebar
-
 - WooCommerce Pages
 
 - Add cart, search and account icons to nav
