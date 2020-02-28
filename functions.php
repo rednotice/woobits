@@ -45,10 +45,10 @@ add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_price', 
 add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_add_to_cart', 20 );
 add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 20 );
 
-function woobits_remove_all_quantity_fields( $return, $product ) {
-    return true;
-}
-add_filter( 'woocommerce_is_sold_individually', 'woobits_remove_all_quantity_fields', 10, 2 );
+// function woobits_remove_all_quantity_fields( $return, $product ) {
+//     return true;
+// }
+// add_filter( 'woocommerce_is_sold_individually', 'woobits_remove_all_quantity_fields', 10, 2 );
 
 function remove_add_to_cart_buttons() {
     if( is_product_category() || is_shop()) { 

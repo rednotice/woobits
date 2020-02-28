@@ -1,3 +1,4 @@
+// Product Page
 .woobits-single-product, .woobits-product-sidebar {
 
     // Clear attributes added by woocommerce. 
@@ -23,7 +24,6 @@
 }
 
 // Shop Page
-
 .woocommerce-loop-product__link {
     .attachment-woocommerce_thumbnail {
         margin-bottom: .5em !important;
@@ -32,5 +32,81 @@
     .woocommerce-loop-product__title, .price {
         color: black !important;
         font-weight: bold !important;
+    }
+}
+
+// Cart
+
+.woocommerce-cart-form {
+    .shop_table {
+        border: 0 !important;
+
+        th {
+            border-bottom: 2px solid black !important;
+        }
+
+        .actions {
+            border-top: 2px solid black !important;
+            padding-top: 1em !important;
+
+            .coupon {
+                @extend .input-group;
+        
+                @media screen and (min-width: 769px) {
+                    width: 60%;
+                }
+    
+                button {
+                    @extend .btn, .btn-primary;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .shop_table {
+
+            th, tr, td {
+                border: 0 !important;
+            }
+    
+            .cart_item {
+                margin: 1em .5em;
+                padding: .5em;
+                background-color: $light;
+                border: 1px solid grey !important;
+                border-radius: $border-radius;
+            }
+    
+            .product-thumbnail {
+                display: block !important;
+                text-align: center !important;
+    
+                &:before {
+                    content: '' !important;
+                }
+            }
+
+            .quantity input {
+                float: right;
+            }
+
+            .product-subtotal {
+                clear: both;
+            }
+    
+            .actions {
+                border-top: 0 !important;
+            }
+        }
+    }
+}
+
+.cart-collaterals {
+    .wc-proceed-to-checkout {
+        .checkout-button.button.alt.wc-forward {
+            @extend .btn, .btn-primary;
+            width: 100%;
+        }
     }
 }

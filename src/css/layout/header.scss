@@ -11,6 +11,7 @@
     @extend .jumbotron, .jumbotron-fluid;
     background: linear-gradient(-135deg, #19003b 0%, #280082 100%);
     padding: 6em 1em 4em 1em;
+    margin-bottom: 0;
 
     @media screen and (min-width: 768px) {
         padding: 7.5rem 2rem 5em 2em;

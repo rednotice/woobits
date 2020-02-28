@@ -13,7 +13,7 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
         {
             add_action( 'widgets_init', array( $this, 'register_sidebars' ), 11 );
             $this->manipulate_product_page();
-            add_filter( 'woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2 );
+            // add_filter( 'woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2 );
         }
 
         public function register_sidebars()
