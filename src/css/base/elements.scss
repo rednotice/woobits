@@ -7,10 +7,10 @@ button, .btn {
     font-weight: 600 !important;
     text-transform: uppercase;
     border-radius: $border-radius;
-    border: 2px solid !important;
+    // border: 2px solid !important;
 }
 
-input:not([type="checkbox"]) {
+input:not([type="checkbox"]):not([type="radio"]) {
     @extend .form-control;
 }
 

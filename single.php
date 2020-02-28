@@ -8,9 +8,9 @@
 
 <?php get_header(); ?>
 
-<?php if( is_product() ) : get_template_part( 'templates/single', 'product' );
+<?php if( is_product() ) : get_template_part( 'templates/content', 'product' );
     
-    else: get_template_part( 'templates/single' ); 
+    else: get_template_part( 'templates/content', 'single' ); 
 
     endif
 ?>

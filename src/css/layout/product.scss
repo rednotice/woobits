@@ -1,0 +1,36 @@
+.woobits-single-product, .woobits-product-sidebar {
+
+    // Clear attributes added by woocommerce. 
+    .woocommerce-product-gallery, .summary {
+        float: none !important;
+        width: 100% !important;
+    } 
+
+    .price {
+        text-align: center;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    .variations {
+        width: 100%;
+
+        tr {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+// Shop Page
+
+.woocommerce-loop-product__link {
+    .attachment-woocommerce_thumbnail {
+        margin-bottom: .5em !important;
+    }
+
+    .woocommerce-loop-product__title, .price {
+        color: black !important;
+        font-weight: bold !important;
+    }
+}

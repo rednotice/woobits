@@ -1,6 +1,7 @@
 - Single Product
-
-- Product Index
+    - Header: Add purchase button -> Modal with variations and add to cart form
+    - Add custom fields ('Product Information) to admin edit product
+    - Add review section
 
 - Cart
 

@@ -25,16 +25,6 @@ if ( ! class_exists( 'Woobits_Sidebars' ) ) {
                 'before_title' => '<h6 class="title">',
                 'after_title' => '</h6>',
             ) );
-            
-            register_sidebar( array(
-                'name' => __( 'Product Page Sidebar', 'woobits' ),
-                'id' => 'product',
-                'description' => __( 'Appears on the right side of the product page.', 'woobits' ),
-                'before_widget' => '<aside id="%1$s" class="woobits-sidebar-widget widget %2$s clearfix">',
-                'after_widget' => '</aside>',
-                'before_title' => '<h6 class="title">',
-                'after_title' => '</h6>',
-            ) );
         }
 
         public function register_footer_widgets()

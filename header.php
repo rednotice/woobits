@@ -21,13 +21,19 @@
     
     <header id="masthead" class="woobits-site-header">
 
-        <?php get_template_part( 'templates/nav' ) ?>
-        
-        <?php if( ! is_front_page() && ! is_single() && ! is_404() ): get_template_part( 'templates/header' ); endif; ?>
+        <?php 
+            get_template_part( 'templates/nav' );
 
-        <?php if( is_single() ): get_template_part( 'templates/header', 'post' ); endif; ?>
+            if( function_exists( 'is_product' ) && is_product() ) : get_template_part( 'templates/header', 'product' );
+
+            elseif( is_single() ) : get_template_part( 'templates/header', 'single' );
+
+            elseif( ! is_front_page() && ! is_404() )  :  get_template_part( 'templates/header' );
+
+            endif;
+        ?>
 
     </header>
 
     <section class="woobits-site-content">
-        <div class="container">
+        <div class="container-fluid">

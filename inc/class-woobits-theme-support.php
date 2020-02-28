@@ -1,6 +1,6 @@
 <?php
 /**
- * Registers the theme's menus.
+ * Adds theme support.
  * @package woobits
  *
  */
