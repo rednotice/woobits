@@ -1,6 +1,6 @@
 <?php
 /**
- * Template used to display post content.
+ * Template used to display the main navigation.
  *
  * @package woobits
  */

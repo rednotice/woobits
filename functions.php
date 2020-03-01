@@ -4,7 +4,12 @@
  * It can be used to run code using Wordpress' action and filter hooks.
  * 
  * @package woobits
+ * 
  */
+
+ // Template functions and hooks
+ require_once get_template_directory() . '/inc/woobits-template-functions.php';
+ require_once get_template_directory() . '/inc/woobits-template-hooks.php';
 
 // Classes
 require_once get_template_directory() . '/inc/class-woobits-theme-support.php';
@@ -30,20 +35,12 @@ class Woobits {
 }
 new Woobits();
 
+function woobits_hide_shop_page_title( $title ) {
+    if ( is_shop() ) $title = false;
+    return $title;
+ }
+add_filter( 'woocommerce_show_page_title', 'woobits_hide_shop_page_title' );
 
-function woobits_purchase_box_widget() {
-    ?> 
-        <aside class="woobits-sidebar-widget widget widget_search clearfix">
-            <h6 class="title">Purchase</h6>
-            <div>
-                <?php @do_action('woobits_purchase_box_widget'); ?>
-            </div>
-        </aside>
-    <?php
-}
-add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_price', 20 );
-add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_add_to_cart', 20 );
-add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 20 );
 
 // function woobits_remove_all_quantity_fields( $return, $product ) {
 //     return true;
@@ -57,13 +54,6 @@ function remove_add_to_cart_buttons() {
 }
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
-function my_the_content_filter( $content ) {
-    global $post;
-    if( 'product' == $post->post_type )
-        $content .= ' <em>' . $post->post_title . '</em>';
-    return $content;
-}
-add_filter( 'the_content', 'my_the_content_filter' );
 
 // Breadcrumbs
 function the_breadcrumb() {

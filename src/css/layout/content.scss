@@ -1,4 +1,4 @@
-.woobits-single-post {
+.woobits-single-post, .woobits-page {
     .navigation {
         display: flex;
         justify-content: space-between;
@@ -21,7 +21,6 @@
             padding: .5em .75em;
             margin: .5em;
             border-radius: 20%/50%;
-
         }
 
         .category {

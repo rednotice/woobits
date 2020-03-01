@@ -17,23 +17,23 @@
     <?php wp_head(); ?>
 
 </head>
-<body>
+<body <?php body_class(); ?>>
     
     <header id="masthead" class="woobits-site-header">
 
-        <?php 
-            get_template_part( 'templates/nav' );
-
-            if( function_exists( 'is_product' ) && is_product() ) : get_template_part( 'templates/header', 'product' );
-
-            elseif( is_single() ) : get_template_part( 'templates/header', 'single' );
-
-            elseif( ! is_front_page() && ! is_404() )  :  get_template_part( 'templates/header' );
-
-            endif;
+        <?php
+        /**
+		 * Functions hooked into woobits_header action
+		 *
+		 * @hooked woobits_primary_navigation - 10
+         * @hooked woobits_site_header - 20
+		 */
+        do_action( 'woobits_header' ); 
         ?>
 
     </header>
 
-    <section class="woobits-site-content">
-        <div class="container-fluid">
+    <?php do_action( 'woobits_before_content' ); ?>
+
+    <div class="woobits-wrapper">
+        <div class="woobits-container">

@@ -3,6 +3,7 @@
     background: linear-gradient(190deg, #1e0051, #3b009e);
     color: white;
     margin-bottom: 0;
+    padding: 0;
 
     a {
         color: inherit;
@@ -12,8 +13,9 @@
         }
     }
 
-    .sidebars {
+    .woobits-footer-widgets {
         @extend .container, .d-flex, .flex-column, .flex-md-row;
+        padding: 2.5em 1em 1em 1em;
 
         .widget {
             @extend .col-12, .col-md-3;
@@ -28,8 +30,11 @@
             }
 
             * {
-                padding-left: 0;
-                margin-left: 0;
+                padding: 0;
+            }
+
+            li {
+                padding: .5em 0;
             }
         }
     }

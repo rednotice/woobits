@@ -4,36 +4,48 @@
  *
  * @package woobits
  */
-?>
 
-<?php get_header(); ?>
+get_header();
 
-<div class="row">
-    <div class="woobits-posts col-12 <?php if( is_active_sidebar( 'blog' ) ) : echo 'col-lg-8'; endif; ?> ">
-        <?php if( have_posts() ): while( have_posts() ): the_post();?>
+/**
+ * Functions hooked in to woobits_posts_before_loop action
+ *
+ * @hooked woobits_content_container_start - 10
+ */
+do_action( 'woobits_posts_before_loop' );
 
-            <?php get_template_part( 'templates/post', 'preview' ) ?>
-            
-        <?php endwhile; ?>
+if( have_posts() ) :
+    
+    do_action( 'woobits_posts_before_main_loop' );
+    
+    while ( have_posts() ) : the_post();
 
-            <div class="pagination">
-                <div class="previous">
-                    <?php previous_posts_link(); ?>
-                </div>
-                <div class="next">
-                    <?php next_posts_link(); ?>
-                </div>
-            </div>
-        
-        <?php else: endif; ?>
+        get_template_part( 'templates/post', 'preview' );
 
-    </div>
+    endwhile;
 
-    <?php if( is_active_sidebar( 'blog' ) ): ?>
-        <div class="woobits-blog-sidebar col-12 col-lg-4">
-            <?php dynamic_sidebar( 'blog' ); ?>
-        </div>
-    <?php endif; ?>
-</div>
+    /**
+     * Functions hooked in to woobits_posts_after_main_loop action
+     *
+     * @hooked woobits_posts_navigation - 10
+     */
+    do_action( 'woobits_posts_after_main_loop' );
 
-<?php get_footer(); ?>
+endif;
+
+/**
+ * Functions hooked in to woobits_posts_after_loop action
+ *
+ * @hooked woobits_content_container_end - 10
+ */
+do_action( 'woobits_posts_after_loop' );
+
+/**
+ * Functions hooked in to woobits_sidebar action
+ *
+ * @hooked woobits_sidebar - 10
+ * @hooked woobits_content_container_end - 20
+ */
+do_action( 'woobits_sidebar' );
+
+get_footer();
