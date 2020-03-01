@@ -1,8 +1,10 @@
+- Fix Css
+
+
 - Single Product
-    -> Structure
     - Header: Add purchase button -> Modal with variations and add to cart form
-    - Add custom fields ('Product Information) to admin edit product
-    - Add review section
+    - Add purchase box to sidebar
+    - Add custom fields ('Product Information) to sidebar & admin edit product
 
 - Checkout
 

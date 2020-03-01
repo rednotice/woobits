@@ -10,7 +10,7 @@
   * Header
   */
 function woobits_primary_navigation() {
-    get_template_part( 'templates/nav' );
+    get_template_part( 'templates/header', 'navigation' );
 }
 
 function woobits_site_header() {
@@ -45,60 +45,6 @@ function woobits_copyright() {
 /**
  * Content
  */
-function woobits_content_container_start() {
-    if( function_exists( 'is_product' ) && is_product() ) :
-        ?>
-        <div class="row">
-        <div class="woobits-product col-12<?php if( is_active_sidebar( 'product' ) ) : echo ' col-lg-8'; endif; ?>">
-    <?php
-
-    elseif( is_single() ) :
-        ?>
-        <div class="row">
-        <div class="woobits-single-post col-12<?php if( is_active_sidebar( 'blog' ) ) : echo ' col-lg-8'; endif; ?>">
-    <?php
-
-    elseif( function_exists( 'is_shop' ) && is_shop() ) :
-        ?>
-        <div class="row">
-        <div class="woobits-shop col-12<?php if( is_active_sidebar( 'shop' ) ) : echo ' col-lg-9 order-lg-1'; endif; ?>">
-    <?php
-
-    elseif( 
-        function_exists( 'is_cart' ) && ! is_cart() 
-        && function_exists( 'is_checkout' ) && ! is_checkout() 
-        && function_exists( 'is_account_page' ) && ! is_account_page()
-    ):
-        ?>
-        <div class="row">
-        <div class="woobits-page col-12<?php if( is_active_sidebar( 'blog' ) ) : echo ' col-lg-8'; endif; ?>">
-    <?php
-    endif;
-}
-
-function woobits_page_container_start() {
-    if( function_exists( 'is_shop' ) && is_shop() ) :
-        $is_active_sidebar = is_active_sidebar( 'shop' );
-
-
-    endif;
-    ?>
-
-    <div class="row">
-        <div class="woobits-content col-12<?php if( isset( $is_active_sidebar ) && $is_active_sidebar ) : echo ' col-lg-9 order-lg-1'; endif; ?>">
-    
-    <?php
-}
-
-function woobits_content_container_end() {
-    ?>
-        </div>
-    <?php
-}
-
-function woobits_content() {
-    the_content();
-}
 
 function woobits_categories() {
     $categories = get_categories();
@@ -150,41 +96,6 @@ function woobits_posts_navigation() {
     <?php
 }
 
-function woobits_sidebar() {
-    if( function_exists( 'is_product' ) && is_product() && is_active_sidebar( 'product' ) ) : ?>
-        <div class="woobits-sidebar col-12 col-lg-4">
-            <?php 
-                do_action( 'woobits_before_product_sidebar' );
-                dynamic_sidebar( 'product' ); 
-            ?>
-        </div>
-
-    <?php elseif( function_exists( 'is_shop' ) && is_shop() && is_active_sidebar( 'shop' ) ) : ?>
-        <div class="woobits-sidebar col-12 col-lg-3 order-lg-0">
-            <?php dynamic_sidebar( 'shop' ); ?>
-        </div>
-
-    <?php elseif( is_single() || is_home() && is_active_sidebar( 'blog' ) ) : ?>
-        <div class="woobits-sidebar col-12 col-lg-4">
-            <?php dynamic_sidebar( 'blog' ); ?>
-        </div>
-    <?php endif;
-}
-
-function woobits_purchase_box_widget() {
-    ?> 
-        <aside class="woobits-sidebar-widget widget widget_search clearfix">
-            <h6 class="title"><?php _e( 'Download Details', 'woobits' ); ?> </h6>
-            <div>
-                <?php do_action('woobits_purchase_box_widget'); ?>
-            </div>
-        </aside>
-    <?php
-}
-
-/**
- * Comments
- */
-function woobits_comments() {
+function woobits_display_comments() {
     if ( comments_open() ): comments_template(); endif;
 }

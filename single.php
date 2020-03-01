@@ -1,71 +1,31 @@
 <?php
 /**
- * Single blog post.
- * 
+ * The template for displaying all single posts.
+ *
  * @package woobits
  */
 
-get_header();
+get_header(); ?>
 
-/**
- * Functions hooked in to woobits_single_before_loop action
- *
- * @hooked woobits_content_container_start - 10
- */
-do_action( 'woobits_single_before_loop' );
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-if( have_posts() ) :
-    
-    do_action( 'woobits_single_before_main_loop' );
-    
-    while ( have_posts() ) : the_post();
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-        if( function_exists( 'is_product' ) && is_product() ) :
+			do_action( 'woobits_single_post_before' );
 
-            /**
-             * Functions hooked in to woobits_single action
-             *
-             * @hooked woobits_content - 10
-             * @hooked purchase_box - 20
-             * @hooked reviews - 10
-             * Short description?
-             */
-            do_action( 'woobits_product' );
+			get_template_part( 'templates/content', 'single' );
 
-        else :
+			do_action( 'woobits_single_post_after' );
 
-            /**
-             * Functions hooked in to woobits_single action
-             *
-             * @hooked woobits_content - 10
-             * @hooked woobits_categories - 20
-             * @hooked woobits_tags - 30
-             * @hooked woobits_post_navigation - 40
-             * @hooked woobits_comments - 50
-             */
-            do_action( 'woobits_single' );
+		endwhile; // End of the loop.
+		?>
 
-        endif;
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-    endwhile;
-
-    do_action( 'woobits_single_after_main_loop' );
-
-endif; // End of the loop.
-
-/**
- * Functions hooked in to woobits_after_single action
- *
- * @hooked woobits_content_container_end - 10
- */
-do_action( 'woobits_single_after_loop' );
-
-/**
- * Functions hooked in to woobits_sidebar action
- *
- * @hooked woobits_sidebar - 10
- * @hooked woobits_content_container_end - 20
- */
-do_action( 'woobits_sidebar' );
-
+<?php
+get_sidebar();
 get_footer();

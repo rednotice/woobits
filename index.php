@@ -1,51 +1,41 @@
 <?php
 /**
- * The list of blog posts.
- *
+ * The main template file.
+ * 
  * @package woobits
  */
 
-get_header();
+get_header(); ?>
 
-/**
- * Functions hooked in to woobits_posts_before_loop action
- *
- * @hooked woobits_content_container_start - 10
- */
-do_action( 'woobits_posts_before_loop' );
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-if( have_posts() ) :
-    
-    do_action( 'woobits_posts_before_main_loop' );
-    
-    while ( have_posts() ) : the_post();
+		<?php
+		if ( have_posts() ) :
 
-        get_template_part( 'templates/post', 'preview' );
+			while ( have_posts() ) : the_post();
 
-    endwhile;
+				get_template_part( 'templates/post', 'preview' );
 
-    /**
-     * Functions hooked in to woobits_posts_after_main_loop action
-     *
-     * @hooked woobits_posts_navigation - 10
-     */
-    do_action( 'woobits_posts_after_main_loop' );
+			endwhile;
 
-endif;
+			/**
+			 * Functions hooked in to woobits_after_main_loop action
+			 *
+			 * @hooked woobits_posts_navigation - 10
+			 */
+			do_action( 'woobits_after_main_loop' );
 
-/**
- * Functions hooked in to woobits_posts_after_loop action
- *
- * @hooked woobits_content_container_end - 10
- */
-do_action( 'woobits_posts_after_loop' );
+		else :
 
-/**
- * Functions hooked in to woobits_sidebar action
- *
- * @hooked woobits_sidebar - 10
- * @hooked woobits_content_container_end - 20
- */
-do_action( 'woobits_sidebar' );
+			_e( 'No posts found.', 'woobits' );
 
+		endif;
+		?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
 get_footer();

@@ -1,54 +1,37 @@
 <?php
 /**
+ * This is the template for displaying all pages.
+ * 
  * @package woobits
  */
 
-get_header();
 
-/**
- * Functions hooked in to woobits_page_before_loop action
- *
- * @hooked woobits_content_container_start - 10
- */
-do_action( 'woobits_page_before_loop' );
+get_header(); ?>
 
-if( have_posts() ) : 
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-    do_action( 'woobits_page_before_main_loop' );
-    
-    while( have_posts() ) : the_post(); 
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-        /**
-         * Functions hooked in to woobits_page add_action
-         *
-         * @hooked woobits_content - 10
-         */
-        do_action( 'woobits_page' );
+				do_action( 'woobits_page_before' );
 
-    endwhile; 
+				get_template_part( 'templates/content', 'page' );
 
-    /**
-     * Functions hooked in to woobits_page_after action
-     *
-     * @hooked woobits_comments - 10
-     */
-    do_action( 'woobits_page_after_main_loop' );
+				/**
+				 * Functions hooked in to woobits_page_after action
+				 *
+				 * @hooked woobits_display_comments - 10
+				 */
+				do_action( 'woobits_page_after' );
 
-endif; // End of the loop.
+			endwhile; // End of the loop.
+			?>
 
-/**
- * Functions hooked in to woobits_after_single action
- *
- * @hooked woobits_content_container_end - 10
- */
-do_action( 'woobits_page_after_loop' );
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-/**
- * Functions hooked in to woobits_sidebar action
- *
- * @hooked woobits_sidebar - 10
- * @hooked woobits_content_container_end - 20
- */
-do_action( 'woobits_sidebar' );
-
+<?php
+get_sidebar();
 get_footer();

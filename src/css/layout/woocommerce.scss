@@ -1,35 +1,3 @@
-// Layout
-.woocommerce {
-    #primary {
-        @extend .d-lg-flex, .flex-lg-fill, .order-lg-1;
-    }
-
-    #secondary.shop, #secondary.product {
-        @extend .d-lg-flex;
-
-        @media screen and (min-width: 992px) {
-            width: 25%;
-            height: max-content;
-            padding-right: 2em;
-        }
-
-        & > .widget {
-            width: 100%;
-        }
-    }
-
-    #secondary.shop {
-        @extend .order-lg-0;
-    }
-
-    #secondary.product {
-        @extend .order-lg-2;
-    }
-
-}
-
-
-
 // Product Page
 .woobits-content, .woobits-sidebar {
 

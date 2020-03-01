@@ -195,13 +195,3 @@
         padding-right: 0.75rem;
     }
 }
-
-.woobits-wrapper {
-    display: flex;
-    flex-grow: 1;
-    margin: 2em 1em
-}
-
-.woobits-container {
-    @extend .container-fluid, .d-lg-flex, .justify-content-lg-between;
-}

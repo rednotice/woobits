@@ -54,6 +54,17 @@ function remove_add_to_cart_buttons() {
 }
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
+// function woobits_purchase_box_widget() {
+//     ?> 
+         <!-- <aside class="woobits-sidebar-widget widget widget_search clearfix">
+//             <h6 class="title"><?php _e( 'Download Details', 'woobits' ); ?> </h6>
+//             <div>
+//                 <?php do_action('woobits_purchase_box_widget'); ?>
+//             </div>
+//         </aside> -->
+     <?php
+// }
+
 
 // Breadcrumbs
 function the_breadcrumb() {

@@ -6,7 +6,7 @@
  */
  ?>
 
-        </div> <!-- .container-fluid -->
+        </div> <!-- .woobits-container -->
     </div> <!-- .woobits-wrapper -->
 
     <?php do_action( 'woobits_after_content' ); ?>
