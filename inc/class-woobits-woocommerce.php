@@ -12,8 +12,7 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
         public function __construct()
         {
             add_action( 'widgets_init', array( $this, 'register_sidebars' ), 11 );
-            $this->manipulate_product_page();
-            // add_filter( 'woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2 );
+            add_filter( 'woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2 );
         }
 
         public function register_sidebars()
@@ -39,15 +38,6 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
             ) );
         }
 
-        public function manipulate_product_page()
-        {
-            add_action( 'woocommerce_single_product_summary', 'the_content', 5 );
-
-            // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-            // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-            // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-        }
-        
         // Add price an change javascript
 
         // $(document).on('change', '.variation-radios input', funsction() {

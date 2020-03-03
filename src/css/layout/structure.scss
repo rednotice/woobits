@@ -17,7 +17,7 @@
 }
 
 #secondary {
-    @extend .d-lg-flex;
+    @extend .d-flex, .flex-column;
     width: 100%;
 
     .widget {
@@ -35,11 +35,20 @@
     }
 }
 
-#secondary.product, #secondary.blog {
+#secondary.blog {
     @extend .order-lg-2;
 
     @media screen and (min-width: 992px) {
         width: 35%;
+        height: max-content;
+        padding-left: 2em;
+    }
+}
+
+#secondary.product{
+    @extend .order-lg-2;
+
+    @media screen and (min-width: 992px) {
         height: max-content;
         padding-left: 2em;
     }

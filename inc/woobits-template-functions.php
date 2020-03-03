@@ -45,7 +45,6 @@ function woobits_copyright() {
 /**
  * Content
  */
-
 function woobits_categories() {
     $categories = get_categories();
         if( $categories ): ?>
@@ -96,6 +95,70 @@ function woobits_posts_navigation() {
     <?php
 }
 
+/**
+ * Displays the comments template.
+ */
 function woobits_display_comments() {
     if ( comments_open() ): comments_template(); endif;
+}
+
+/**
+ * Widgets
+ */
+function woobits_purchase_box_widget() {
+    ?> 
+    <aside class="woobits-sidebar-widget widget widget_search clearfix">
+        <h6 class="title"><?php _e( 'Download Details', 'woobits' ); ?> </h6>
+        <div>
+            <?php 
+                /**
+                 * Functions hooked in to woobits_purchase_box_widget add_action
+                 * 
+                 * @hooked woocommerce_template_single_add_to_cart - 10
+                 */
+                do_action('woobits_purchase_box_widget'); 
+            ?>
+        </div>
+    </aside>
+    <?php
+}
+
+/**
+ * WooCommerce
+ */
+
+/**
+ * Displays the product review template.
+ */
+function woobits_display_product_reviews() {
+    global $product;
+ 
+    if ( ! comments_open() )
+        return;
+?>
+    <div class="product-reviews">
+        <h2 class="review-title" itemprop="headline">
+            <?php printf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ); ?>
+        </h2>
+        <?php call_user_func( 'comments_template', 999 ); ?>
+    </div>
+    <div class="clearfix clear"></div>
+<?php
+}
+
+/**
+ * Hides the title on the shop page.
+ */
+function woobits_hide_shop_page_title( $title ) {
+    if ( is_shop() ) $title = false;
+    return $title;
+}
+
+/**
+ * Removes the add to cart buttons on product archive pages.
+ */
+function woobits_remove_add_to_cart_buttons() {
+    if( is_shop() || is_product_category() || is_product_tag() ) { 
+        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+    }
 }

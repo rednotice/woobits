@@ -1,98 +1,112 @@
 // Product Page
-.woobits-content, .woobits-sidebar {
+.woocommerce-product-gallery, .summary {
+    float: none !important;
+    width: 100% !important;
+} 
 
-    // Clear attributes added by woocommerce. 
-    .woocommerce-product-gallery, .summary {
-        float: none !important;
-        width: 100% !important;
-    } 
+// .price {
+//     font-size: larger;
+//     font-weight: bold;
+// }
 
-    .price {
-        font-size: larger;
-        font-weight: bold;
-    }
+// .variations {
+//     width: 100%;
 
-    .variations {
-        width: 100%;
-
-        tr {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-}
+//     tr {
+//         display: flex;
+//         flex-direction: column;
+//     }
+// }
 
 // Shop Page
-    .woocommerce ul.products li.product a img {
-        margin-bottom: 0;
-    }
+.woocommerce ul.products li.product a img {
+    margin-bottom: 0;
+}
 
-    .woocommerce-loop-product__title, .price {
-        color: black !important;
-        font-weight: bold !important;
-    }
+.woocommerce-loop-product__title, .price {
+    color: black !important;
+    font-weight: bold !important;
+}
 
 // Cart
 .woocommerce-cart-form {
     .shop_table {
         border: 0 !important;
 
-        th {
-            border-bottom: 2px solid black !important;
+        th, tr, td {
+            border: 0 !important;
+        }
+
+        .cart_item {
+            margin: 1em .5em;
+            padding: .5em;
+            background-color: $light;
+            border: 1px solid grey !important;
+            border-radius: $border-radius;
+        }
+
+        .product-thumbnail {
+            display: block !important;
+            text-align: center !important;
+
+            &:before {
+                content: '' !important;
+            }
+
+            img {
+                width: 50%;
+            }
+        }
+
+        .quantity input {
+            float: right;
+        }
+
+        .product-subtotal {
+            clear: both;
         }
 
         .actions {
-            border-top: 2px solid black !important;
-            padding-top: 1em !important;
+            border-top: 0 !important;
 
-            .coupon {
-                @extend .input-group;
-        
-                @media screen and (min-width: 769px) {
-                    width: 60%;
-                }
-    
-                button {
-                    @extend .btn, .btn-primary;
-                }
+            button {
+                @extend .btn, .btn-primary;
+            }
+
+            button[name="update_cart"] {
+                @extend .btn-sm;
             }
         }
-    }
 
-    @media screen and (max-width: 768px) {
-        .shop_table {
+        @media screen and (min-width: 769px) {
 
-            th, tr, td {
-                border: 0 !important;
+            th {
+                border-bottom: 2px solid black !important;
             }
-    
+
             .cart_item {
-                margin: 1em .5em;
-                padding: .5em;
-                background-color: $light;
-                border: 1px solid grey !important;
-                border-radius: $border-radius;
+                background-color: transparent;
             }
-    
+
             .product-thumbnail {
-                display: block !important;
-                text-align: center !important;
+                text-align: left !important;
     
-                &:before {
-                    content: '' !important;
+                img {
+                    width: 125px;
                 }
             }
 
             .quantity input {
-                float: right;
+                float: none;
             }
 
-            .product-subtotal {
-                clear: both;
-            }
-    
             .actions {
-                border-top: 0 !important;
+                border-top: 2px solid black !important;
+                padding-top: 1em !important;
+
+                #coupon_code {
+                    width: 200px;
+                }
             }
         }
     }
@@ -101,8 +115,7 @@
 .cart-collaterals {
     .wc-proceed-to-checkout {
         .checkout-button.button.alt.wc-forward {
-            @extend .btn, .btn-primary;
-            width: 100%;
+            @extend .btn, .btn-block, .btn-primary;
         }
     }
 }

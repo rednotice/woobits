@@ -8,7 +8,16 @@
 if( is_active_sidebar( 'product' ) && function_exists( 'is_product') && is_product() ) :
 	?>
 	<div id="secondary" class="widget-area product" role="complementary">
-		<?php dynamic_sidebar( 'product' ); ?>
+		<?php 
+			/**
+			 * Functions hooked in to woobits_purchase_box add_action
+			 * 
+			 * @hooked woobits_purchase_box_widget - 10
+			 */
+			do_action( 'woobits_product_sidebar');
+
+			dynamic_sidebar( 'product' ); 
+		?>
 	</div><!-- #secondary -->
 	<?php
 

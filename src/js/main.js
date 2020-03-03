@@ -1,6 +1,15 @@
 // Bootstrap
 import 'bootstrap';
 
+// Needed for the buy box radio buttons
+// document.addEventListener('change', function() {
+
+// })
+
+// $(document).on('change', '.variation-radios input', funsction() {
+//     $('select[name="'+$(this).attr('name')+'"]').val($(this).val()).trigger('change');
+// });
+
 // Adds dropdown menu to navbar on dektop devices.
 window.addEventListener('load', function() {
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
