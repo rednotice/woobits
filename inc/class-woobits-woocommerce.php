@@ -80,7 +80,7 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
 
           foreach( $terms as $term ) {
             if( in_array( $term->slug, $options, true ) ) {
-              $radios .= '<div class="form-check">
+              $radios .= '<div class="form-check form-'.sanitize_title( $option ).'">
               <input class="form-check-input" type="radio" name="'.esc_attr( $name ).'" value="'.esc_attr( $term->slug ) .'" '.checked(sanitize_title( $args['selected'] ), $term->slug, false).'>
               <label class="form-check-label" for="'.esc_attr( $term->slug ) .'">'.esc_html( apply_filters( 'woocommerce_variation_option_name', $term->name ) ).'</label>
               </div>';
@@ -89,7 +89,7 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
         } else {
           foreach( $options as $option ) {
               $checked    = sanitize_title( $args['selected']) === $args['selected'] ? checked( $args['selected'], sanitize_title( $option ), false ) : checked( $args['selected'], $option, false );
-              $radios    .= '<div class="form-check">
+              $radios    .= '<div class="form-check form-'.sanitize_title( $option ).'">
               <input class="form-check-input" type="radio" name="'.esc_attr( $name ).'" value="'.esc_attr( $option ).'" id="'.sanitize_title( $option ).'" '.$checked.'>
               <label class="form-check-label" for="'.sanitize_title( $option ).'">'.esc_html( $this->display_price_in_variation_option_name( $option ) ) . '</label>
               </div>';

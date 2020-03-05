@@ -54,3 +54,13 @@ function removeNavDropDown() {
 $(document).on('change', '.variation-radios input', function() {
     $('select[name="'+$(this).attr('name')+'"]').val($(this).val()).trigger('change');
 });
+
+$('.variation-radios input').click(function () {
+    $('.variation-radios input').each(function() {
+        if ($(this).is(':checked')) {
+            $('.form-' + $(this).attr('id')).addClass('active');
+        } else {
+            $('.form-' + $(this).attr('id')).removeClass('active');
+        }
+    });
+});

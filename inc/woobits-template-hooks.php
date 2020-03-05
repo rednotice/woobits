@@ -46,7 +46,10 @@ remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20 );
 /**
  * Product
  */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+// remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 ); 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 // Variation form changed to look better with radio buttons.
@@ -56,7 +59,10 @@ add_filter( 'woocommerce_reset_variations_link', '__return_empty_string' );
 add_filter( 'woocommerce_is_sold_individually', 'woobits_remove_all_quantity_fields', 10, 2 );
 
 add_action( 'woocommerce_single_product_summary', 'the_content', 5 );
+add_action( 'woocommerce_single_product_summary', 'woobits_purchase_box_widget', 9 );
 add_action( 'woocommerce_after_single_product_summary', 'woobits_display_product_reviews', 15 );
+add_action( 'woobits_after_product_header_title', 'woocommerce_template_single_rating', 20);
+
 
 // Purchase Box Sidebar Widget
 add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 10 );

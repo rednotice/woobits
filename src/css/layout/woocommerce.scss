@@ -4,22 +4,37 @@
     width: 100% !important;
 } 
 
-.woocommerce div.product form.cart .variations select {
-    display: none;
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    font-size: 1.5em !important;
+    font-weight: bold;
+    text-align: center;
 }
 
-.woocommerce div.product form.cart .variations td.label {
-    display: none;
+.variation-radios {
+    .form-check {
+        line-height: normal;
+        margin-bottom: .5em;
+    }
+
+    .active {
+        color: $primary;
+    }
 }
 
-.variation-radios .form-check {
-    line-height: normal;
+.woocommerce div.product form.cart {
+    margin-bottom: 0;
+
+    .variations {
+        select, td.label {
+            display: none;
+        }
+    }
+
+    .button {
+        @extend .btn, .btn-block, .btn-primary;
+    }
 }
 
-// .price {
-//     font-size: larger;
-//     font-weight: bold;
-// }
 
 // .variations {
 //     width: 100%;
