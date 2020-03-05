@@ -1,8 +1,7 @@
-- Single Product
-    - Make radio button buy box work
-    - Style product page
+- Single product
     - Header: Add purchase button -> Modal with variations and add to cart form
     - Add custom fields ('Product Information) to sidebar & admin edit product
+    - Style product page
 
 - Checkout
 

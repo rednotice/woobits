@@ -36,13 +36,6 @@ class Woobits {
 new Woobits();
 
 
-
-function woobits_remove_all_quantity_fields( $return, $product ) {
-    return true;
-}
-add_filter( 'woocommerce_is_sold_individually', 'woobits_remove_all_quantity_fields', 10, 2 );
-
-
 // Breadcrumbs
 function the_breadcrumb() {
     echo '<a href="'.home_url().'" rel="nofollow">Home</a>';

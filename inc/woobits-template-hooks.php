@@ -53,11 +53,15 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
 add_filter( 'woocommerce_reset_variations_link', '__return_empty_string' );
+add_filter( 'woocommerce_is_sold_individually', 'woobits_remove_all_quantity_fields', 10, 2 );
 
 add_action( 'woocommerce_single_product_summary', 'the_content', 5 );
 add_action( 'woocommerce_after_single_product_summary', 'woobits_display_product_reviews', 15 );
+
+// Purchase Box Sidebar Widget
 add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 10 );
-add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_add_to_cart' );
+add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_price', 10 ); 
+add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_add_to_cart', 20 );
 
 /**
  * Product Archives
