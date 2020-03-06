@@ -140,7 +140,7 @@ function woobits_display_product_reviews() {
         <h2 class="review-title" itemprop="headline">
             <?php printf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ); ?>
         </h2>
-        <?php call_user_func( 'comments_template', 999 ); ?>
+        <?php comments_template(); ?>
     </div>
     <div class="clearfix clear"></div>
 <?php

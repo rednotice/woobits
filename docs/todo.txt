@@ -1,13 +1,15 @@
-- Single product
-    - Header: Add purchase button -> Modal with variations and add to cart form
-    - Add custom fields ('Product Information) to sidebar & admin edit product
-    - Style product page
 
 - Checkout
 
 - My Account
 
 - Add cart, search and account icons to nav
+
+- Single product:
+    - Add excerpt as "In Short" widget to sidebar
+    - Add custom fields ('Product Information) to sidebar & admin edit product
+    - Header: Add purchase button -> Modal with variations and add to cart form
+    - Fix variations form active class bug
 
 - Front Page
 

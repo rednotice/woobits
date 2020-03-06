@@ -6,14 +6,17 @@
         @extend .col-12;
 
         .heading {
-            margin-bottom: 1em;
+            @include widget-title();
         }
 
         .list {
 
             .comment {
                 display: flex;
-                margin-bottom: 2em;
+                background-color: $light;
+                padding: 1em;
+                margin-bottom: 1em;
+                border-radius: $border-radius;
 
                 .comment-box {
                     display: flex;

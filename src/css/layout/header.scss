@@ -84,6 +84,11 @@
                     }
                 }
             }
+
+            .woocommerce-product-rating {
+                @extend .d-flex, .justify-content-center, .justify-content-md-start;
+                margin-bottom: 1em;
+            }
         }
     }
 }
