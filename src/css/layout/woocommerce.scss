@@ -1,4 +1,10 @@
 //General
+.woocommerce {
+    .col-1, .col-2 {
+        max-width: none;
+    }
+}
+
 .star-rating {
     color: #FEDB00;
 }
@@ -188,5 +194,85 @@
         .checkout-button.button.alt.wc-forward {
             @extend .btn, .btn-block, .btn-primary;
         }
+    }
+}
+
+// Checkout
+.woocommerce-checkout {
+    label {
+        margin-bottom: 0;
+    }
+
+    .form-row {
+        display: block;
+    }
+
+    .woocommerce-billing-fields h3, .woocommerce-additional-fields h3, #order_review_heading {
+        @include widget-title();
+        text-transform: none;
+        text-align: center;
+    }
+
+    .woocommerce-billing-fields, .woocommerce-additional-fields {
+        margin-bottom: 2em;
+    }
+
+    .woocommerce-form__input-checkbox {
+        position: relative;
+    }
+
+    form .form-row input.input-text, .woocommerce form .form-row textarea {
+        padding: .6180469716em;
+        background-color: $light;
+        color: #43454b;
+        outline: 0;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        font-weight: 400;
+        border-radius: $border-radius;
+        border: solid 2px $light;
+    }
+
+    .form-row textarea {
+        min-height: 10em;
+        height: auto;
+    }
+
+    .woocommerce-checkout-payment {
+        background-color: $light !important;
+    }
+
+    #place_order {
+        @extend .btn, .btn-primary;
+    }
+
+}
+
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1,.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+    float: left;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.col-2, .col-2 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+@media screen and (min-width: 980px) {
+    .woocommerce-shipping-fields h3, .woocommerce-billing-fields h3 {
+        width:100%;
+    }
+
+    .woocommerce .col2-set, .woocommerce-page .col2-set {
+        width: 48%;
+        float: left;
+    }
+
+    .woocommerce-checkout-review-order, #order_review_heading  {
+        width: 48%;
+        float: right;
     }
 }
