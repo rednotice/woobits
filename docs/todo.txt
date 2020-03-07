@@ -1,8 +1,3 @@
-
-- Checkout
-
-- My Account
-
 - Add cart, search and account icons to nav
 
 - Single product:
@@ -10,12 +5,10 @@
     - Add custom fields ('Product Information) to sidebar & admin edit product
     - Header: Add purchase button -> Modal with variations and add to cart form
     - Fix variations form active class bug
-
-- Front Page
-
-
+    
 - Bug Fixes:
     - Post preview image size
+    - Child comments
 
 - Cleanup & comment code
 

@@ -7,6 +7,7 @@
 
     a {
         color: inherit;
+        font-weight: 600;
 
         &:hover {
             @include alpha-color( white );

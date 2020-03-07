@@ -97,15 +97,10 @@
     @extend .navbar, .navbar-expand-lg, .p-lg-4;
     position: absolute;
     top: 0em;
-    width: 100%;
     justify-content: space-between;
     color: white;
-    background: linear-gradient(-135deg, rgba(25, 0, 59, .75) 0%, rgba(40, 0, 130, .75) 100%);
+    width: 100%;
     z-index: 999;
-
-    @media screen and (min-width: 992px) {
-        background: transparent;
-    }
 
     a:hover {
         @include alpha-color( white );
@@ -114,6 +109,13 @@
     .container {
         @extend .collapse, .navbar-collapse;
         justify-content: end;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 100%;
+        width: 100%;
+        background: linear-gradient(-135deg, rgba(25, 0, 59, .75) 0%, rgba(40, 0, 130, .75) 100%);
     }
 
     .menu {
@@ -168,10 +170,6 @@
         }
     }
 
-    .active {
-        font-weight: 700;
-    }
-
     .brand {
         @extend .navbar-brand;
         font-weight: 700;
@@ -186,13 +184,33 @@
         }
     }
 
-    .collapse {
-        max-width: 100%;
-        width: 100%;
-    }
-
     a {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
+        font-weight: 600;
+    }
+
+    .active {
+        font-weight: 900;
+    }
+
+    @media screen and (min-width: 992px) {
+        .container {
+            background: transparent;
+        }
+    }
+}
+
+// Transparent navbar for the home page
+.home .woobits-navbar {
+    position: relative;
+    color: $dark;
+
+    a:hover {
+        @include alpha-color( $dark );
+    }
+
+    .sub-menu a:hover {
+        @include alpha-color( white );
     }
 }
