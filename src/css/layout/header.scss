@@ -146,24 +146,10 @@
 
             .sub-menu-0 {
                 @media screen and (min-width: 992px) {
-                    display: none;
-                    position: absolute;
-                    color: white;
-                    background-color: $primary;
-                    border-radius: $border-radius;
+                    @include sub-menu();
 
                     &:after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 50%;
-                        width: 0;
-                        height: 0;
-                        border: 0.5em solid transparent;
-                        border-bottom-color: $primary;
-                        border-top: 0;
-                        margin-left: -0.4em;
-                        margin-top: -0.4em;
+                        @include sub-menu-after();
                     }
                 }
             }
@@ -192,6 +178,70 @@
 
     .active {
         font-weight: 900;
+    }
+
+    // Icons
+    .woobits-search-icon {
+        margin-top: -.15em;
+        cursor: pointer;
+
+        &:hover {
+            color: inherit;
+        }
+    
+        &::before {
+            font-family: 'Dashicons';
+            content: '\f179';
+            font-size: 1.25em;
+        }
+    }
+
+    .woobits-searchform {
+        @include sub-menu();
+        margin-left: -9em;
+        padding: 1em;
+
+        &:after {
+            @include sub-menu-after();
+            left: 62%;
+        }
+    }
+
+    .woobits-cart-icon {
+        margin-top: -.15em;
+
+        &:hover {
+            color: inherit;
+        }
+    
+        &::before {
+            font-family: 'Dashicons';
+            content: '\f174';
+            font-size: 1.25em;
+        }
+    }
+
+    .woobits-cart-count {
+        @extend .badge, .badge-pill, .badge-light;
+        font-size: 12px;
+        margin-left: -.25em;
+    }
+
+    .woobits-cart-content {
+        @include sub-menu();
+        display: block !important;
+        text-align: center;
+        margin-left: -8em;
+        padding: 1em;
+
+        &::after {
+            @include sub-menu-after();
+            left: 80%;
+        }
+
+        .empty {
+            font-weight: bold;
+        }
     }
 
     @media screen and (min-width: 992px) {

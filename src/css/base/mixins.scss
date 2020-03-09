@@ -16,3 +16,26 @@
     margin-bottom: 1em;
     border-radius: $border-radius;
 }
+
+@mixin sub-menu() {
+    display: none;
+    position: absolute;
+    color: white;
+    background-color: $primary;
+    border-radius: $border-radius;
+}
+
+@mixin sub-menu-after() {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 0.5em solid transparent;
+    border-bottom-color: $primary;
+    border-top: 0;
+    margin-left: -0.4em;
+    margin-top: -0.4em;
+}
+

@@ -1,17 +1,30 @@
-- Add cart, search and account icons to nav
+- Nav:
+    - Preview cart content
+    - Add login button
+    - Style Mobile menu
 
 - Single product:
     - Add excerpt as "In Short" widget to sidebar
     - Add custom fields ('Product Information) to sidebar & admin edit product
     - Header: Add purchase button -> Modal with variations and add to cart form
     - Fix variations form active class bug
-    
+
 - Bug Fixes:
     - Post preview image size
     - Child comments
 
+-> Use in production
+
 - Cleanup & comment code
+
+- Style Member Area
+
+- Style widgets
+
+- Improve visual flaws
 
 - Customization options
 
 - License
+
+-> Sell

@@ -50,7 +50,7 @@ function removeNavDropDown() {
     )
 }
 
-// Variation radio  buttons
+// Variation radio buttons
 $(document).on('change', '.variation-radios input', function() {
     $('select[name="'+$(this).attr('name')+'"]').val($(this).val()).trigger('change');
 });
@@ -63,4 +63,15 @@ $('.variation-radios input').click(function () {
             $('.form-' + $(this).attr('id')).removeClass('active');
         }
     });
+});
+
+// Toggle search form in main menu
+$('.woobits-search-icon').click(function() {
+    $('.woobits-searchform').toggle();
+});
+
+$(document).keyup(function(e) {
+    if (e.key == 'Escape') {
+        $('.wpbsearchform').hide();
+    }
 });

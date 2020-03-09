@@ -20,6 +20,93 @@ function woobits_site_header() {
     endif;
 }
 
+function ww_load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'ww_load_dashicons', 1);
+
+
+// Creates Cart Icon Shortcode
+add_shortcode ('woobits_cart', 'woobits_cart' );
+function woobits_cart() {
+	ob_start();
+ 
+        $cart_count = WC()->cart->cart_contents_count;
+        $cart_url = wc_get_cart_url();
+  
+        ?>
+        <li class="menu-item nav-item">
+            <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>" title="My Basket">
+            <?php
+            if ( $cart_count > 0 ) {
+                ?>
+                <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
+                <?php
+            }
+            ?>
+            </a>
+            <ul class="woobits-cart-content" style="display: none;">
+                <span class="empty"><?php _e( 'Your cart is empty.', 'woobits'); ?></span>
+            </ul>
+        </li>
+        <?php
+	        
+    return ob_get_clean();
+}
+
+// Updates counter using AJAX when cart content changes
+function woobits_cart_counter( $fragments ) {
+    ob_start();
+    
+    $cart_count = WC()->cart->cart_contents_count;
+    $cart_url = wc_get_cart_url();
+    $cart_total = WC()->cart->get_cart_total();
+    
+    ?>
+    <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
+	<?php
+    if ( $cart_count > 0 ) {
+        ?>
+        <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
+        <?php            
+    }
+        ?>
+    </a>
+    <!-- <ul class="woobits-cart-content" style="display: none;">
+        <span class="empty"><?php echo $cart_total; ?></span>
+        LOL
+    </ul> -->
+    <?php
+ 
+    $fragments['a.woobits-cart-icon'] = ob_get_clean();
+     
+    return $fragments;
+}
+
+// Creates Cart Icon Shortcode
+add_shortcode ('woobits_search', 'woobits_search' );
+function woobits_search() {
+	ob_start();
+        ?>
+        <li class="menu-item nav-item">
+            <a class="woobits-search-icon nav-link" title="Search">
+            </a>
+            <ul style="display: none;" class="woobits-searchform">
+                <?php get_search_form(); ?>
+            </ul>
+        </li>
+        <?php
+	        
+    return ob_get_clean();
+}
+
+// Add Cart Menu Item Shortcode to particular menu
+function woobits_add_icons_to_menu ( $items, $args ) {
+        $items .=  do_shortcode('[woobits_search]');
+        $items .=  do_shortcode('[woobits_cart]');
+        return $items;
+}
+
 /**
  * Footer
  */
