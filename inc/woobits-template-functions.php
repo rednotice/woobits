@@ -35,18 +35,18 @@ function woobits_cart() {
         $cart_url = wc_get_cart_url();
   
         ?>
-        <li class="menu-item nav-item">
-            <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>" title="My Basket">
-            <?php
-            if ( $cart_count > 0 ) {
-                ?>
+        <li class="menu-item nav-item woobits-cart">
+            <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>"  title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
+            <?php if ( $cart_count > 0 ) : ?>
                 <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
-                <?php
-            }
-            ?>
+            <?php endif; ?>
             </a>
-            <ul class="woobits-cart-content" style="display: none;">
-                <span class="empty"><?php _e( 'Your cart is empty.', 'woobits'); ?></span>
+            <ul class="woobits-cart-content sub-menu" style="display: none;">
+                <?php if ( $cart_count > 0 ) : ?>
+                <span class="description"><?php printf( _n( 'Your cart contains %s item.', 'Your cart contains %s items.', $cart_count, 'woobits' ), number_format_i18n( $cart_count ) ); ?></span>
+                <?php else : ?>
+                <span class="description"><?php _e( 'Your cart is empty.', 'woobits'); ?></span>
+                <?php endif; ?>
             </ul>
         </li>
         <?php
@@ -64,21 +64,34 @@ function woobits_cart_counter( $fragments ) {
     
     ?>
     <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
-	<?php
-    if ( $cart_count > 0 ) {
-        ?>
+    <?php if ( $cart_count > 0 ) : ?>
         <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
-        <?php            
-    }
-        ?>
+    <?php endif; ?>
     </a>
-    <!-- <ul class="woobits-cart-content" style="display: none;">
-        <span class="empty"><?php echo $cart_total; ?></span>
-        LOL
-    </ul> -->
     <?php
  
     $fragments['a.woobits-cart-icon'] = ob_get_clean();
+     
+    return $fragments;
+}
+
+// Updates cart content preview using AJAX.
+function woobits_cart_content_preview( $fragments ) {
+    ob_start();
+    
+    $cart_count = WC()->cart->cart_contents_count;
+
+    ?>
+    <ul class="woobits-cart-content sub-menu" style="display: none;">
+        <?php if ( $cart_count > 0 ) : ?>
+        <span class="description"><?php printf( _n( 'Your cart contains %s item.', 'Your cart contains %s items.', $cart_count, 'woobits' ), number_format_i18n( $cart_count ) ); ?></span>
+        <?php else : ?>
+        <span class="description"><?php _e( 'Your cart is empty.', 'woobits'); ?></span>
+        <?php endif; ?>
+    </ul>
+    <?php
+ 
+    $fragments['ul.woobits-cart-content'] = ob_get_clean();
      
     return $fragments;
 }

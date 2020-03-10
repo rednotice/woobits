@@ -207,40 +207,42 @@
         }
     }
 
-    .woobits-cart-icon {
-        margin-top: -.15em;
-
-        &:hover {
-            color: inherit;
-        }
+    .woobits-cart {
+        .woobits-cart-icon {
+            margin-top: -.15em;
     
-        &::before {
-            font-family: 'Dashicons';
-            content: '\f174';
-            font-size: 1.25em;
-        }
-    }
-
-    .woobits-cart-count {
-        @extend .badge, .badge-pill, .badge-light;
-        font-size: 12px;
-        margin-left: -.25em;
-    }
-
-    .woobits-cart-content {
-        @include sub-menu();
-        display: block !important;
-        text-align: center;
-        margin-left: -8em;
-        padding: 1em;
-
-        &::after {
-            @include sub-menu-after();
-            left: 80%;
+            &:hover {
+                color: inherit;
+            }
+        
+            &::before {
+                font-family: 'Dashicons';
+                content: '\f174';
+                font-size: 1.25em;
+            }
         }
 
-        .empty {
-            font-weight: bold;
+        .woobits-cart-count {
+            @extend .badge, .badge-pill, .badge-light;
+            font-size: 12px;
+            margin-left: -.25em;
+        }
+
+        .woobits-cart-content {
+            @include sub-menu();
+            text-align: center;
+            width: 250px;
+            margin-left: -12em;
+            padding: 1em;
+    
+            &::after {
+                @include sub-menu-after();
+                left: 80%;
+            }
+    
+            .description {
+                font-weight: bold;
+            }
         }
     }
 
