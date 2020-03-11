@@ -120,6 +120,7 @@
 
     .menu {
         @extend .navbar-nav;
+        align-items: center;
         margin-right: auto;
 
         @media screen and (min-width: 992px) {
@@ -182,7 +183,6 @@
 
     // Icons
     .woobits-search-icon {
-        margin-top: -.15em;
         cursor: pointer;
 
         &:hover {
@@ -209,7 +209,6 @@
 
     .woobits-cart {
         .woobits-cart-icon {
-            margin-top: -.15em;
     
             &:hover {
                 color: inherit;
@@ -244,6 +243,25 @@
                 font-weight: bold;
             }
         }
+    }
+
+    .woobits-account-menu {
+        @include sub-menu();
+        list-style-type: none;
+        margin-left: -2em;
+        padding: .5em;
+        font-weight: 600;
+
+        &:after {
+            @include sub-menu-after();
+            left: 62%;
+        }
+    }
+
+    .woobits-login-button {
+        @extend .btn, .btn-sm, .btn-outline-light;
+        text-transform: none;
+        padding: .5em 1em;
     }
 
     @media screen and (min-width: 992px) {

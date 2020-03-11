@@ -113,10 +113,45 @@ function woobits_search() {
     return ob_get_clean();
 }
 
+// Creates login button shortcode
+add_shortcode ('woobits_login', 'woobits_login' );
+function woobits_login() {
+	ob_start();
+        ?>
+        <li class="menu-item nav-item">
+            <?php if( is_user_logged_in() ) : ?>
+                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-link">
+                    <?php printf( __( 'Hello, %s', 'woobits' ), wp_get_current_user()->display_name ); ?>
+                </a>
+                <ul class="woobits-account-menu sub-menu-0" style="display: none;">
+                    <li class="menu-item nav-item">
+                        <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-link">
+                           <?php _e( 'My Account', 'woobits' ); ?>
+                        </a>
+                    </li>
+                    <li class="menu-item nav-item">
+                        <a href="<?php echo wc_logout_url(); ?>" class="nav-link">
+                            <?php _e( 'Logout', 'woobits' ); ?>
+                        </a>
+                    </li>
+                </ul>
+            <?php else : ?>
+                <a class="woobits-login-button" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="My Account">
+                    <span class="dashicons dashicons-admin-users"></span>
+                    <?php _e( 'Login', 'woobits' ) ?>
+                </a>
+            <?php endif; ?>
+        </li>
+        <?php
+	        
+    return ob_get_clean();
+}
+
 // Add Cart Menu Item Shortcode to particular menu
 function woobits_add_icons_to_menu ( $items, $args ) {
         $items .=  do_shortcode('[woobits_search]');
         $items .=  do_shortcode('[woobits_cart]');
+        $items .=  do_shortcode('[woobits_login]');
         return $items;
 }
 

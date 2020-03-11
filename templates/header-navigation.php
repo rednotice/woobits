@@ -4,10 +4,9 @@
  *
  * @package woobits
  */
-
 ?>
 
-<nav class="woobits-navbar">
+<nav class="woobits-navbar" <?php if( is_admin_bar_showing() ) : echo 'style="top:32px;"'; endif; ?>>
     <?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
         the_custom_logo();
     } else {
