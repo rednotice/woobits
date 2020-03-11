@@ -1,5 +1,4 @@
 - Nav:
-    - Preview cart content
     - Add login button
     - Style Mobile menu
 

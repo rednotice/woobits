@@ -41,7 +41,7 @@ function woobits_cart() {
                 <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
             <?php endif; ?>
             </a>
-            <ul class="woobits-cart-content sub-menu" style="display: none;">
+            <ul class="woobits-cart-content sub-menu-0" style="display: none;">
                 <?php if ( $cart_count > 0 ) : ?>
                 <span class="description"><?php printf( _n( 'Your cart contains %s item.', 'Your cart contains %s items.', $cart_count, 'woobits' ), number_format_i18n( $cart_count ) ); ?></span>
                 <?php else : ?>
@@ -82,7 +82,7 @@ function woobits_cart_content_preview( $fragments ) {
     $cart_count = WC()->cart->cart_contents_count;
 
     ?>
-    <ul class="woobits-cart-content sub-menu" style="display: none;">
+    <ul class="woobits-cart-content sub-menu-0" style="display: none;">
         <?php if ( $cart_count > 0 ) : ?>
         <span class="description"><?php printf( _n( 'Your cart contains %s item.', 'Your cart contains %s items.', $cart_count, 'woobits' ), number_format_i18n( $cart_count ) ); ?></span>
         <?php else : ?>

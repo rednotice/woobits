@@ -16,7 +16,7 @@
         echo '</a>';
     } ?>
 
-    <button class="toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="toggler" type="button" data-toggle="collapse" data-target="#woobitsMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon"></span>
     </button>
 
@@ -25,7 +25,7 @@
             [ 
                 'theme_location' => 'main-menu',
                 'container_class' => 'container',
-                'container_id' => 'navbarSupportedContent',
+                'container_id' => 'woobitsMenu',
                 'menu_class' => 'menu',
                 'menu_id' => 'woobits-main-menu'
             ] 
