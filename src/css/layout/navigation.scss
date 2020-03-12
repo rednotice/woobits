@@ -1,0 +1,194 @@
+// Main Navigation Bar
+.woobits-navbar {
+    position: absolute;
+    top: 0em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    font-weight: 600;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a {
+        color: white;
+
+        &:hover {
+            @include alpha-color( white );
+        }
+    }
+
+    .brand {
+        @extend .navbar-brand;
+        font-weight: 700;
+    }
+
+    .wrapper {
+        display: flex;
+
+        .sub-menu-0 {
+            @media screen and (min-width: 992px) {
+                @include sub-menu();
+                padding: .5em;
+    
+                &:after {
+                    @include sub-menu-after();
+                }
+            }
+        }
+    }
+
+    .items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        .woobits-search {
+            cursor: pointer;
+
+            .woobits-searchform {
+                @import '../components/search.scss';
+                @include sub-menu();
+                margin-left: -11em;
+                padding: 1em;
+    
+                &:after {
+                    @include sub-menu-after();
+                    left: 62%;
+                }
+            }
+        }
+
+        .woobits-cart {
+            .count {
+                @extend .badge, .badge-pill, .badge-light;
+                font-size: 12px;
+            }
+
+            .woobits-cart-content {
+                @include sub-menu();
+                text-align: center;
+                width: min-content;
+                min-width: 250px;
+                margin-left: -12em;
+                padding: 1em;
+        
+                &::after {
+                    @include sub-menu-after();
+                    left: 80%;
+                }
+            }
+        }
+
+        .woobits-account {
+            white-space: nowrap;
+
+            .woobits-account-menu {
+                @include sub-menu();
+                margin-left: -2em;
+                padding: .5em;
+        
+                &:after {
+                    @include sub-menu-after();
+                    left: 62%;
+                }
+            }
+        }
+
+        .woobits-account, .woobits-search {
+            @extend .d-none, .d-lg-block;
+        }
+
+        .woobits-login-button {
+            @extend .btn, .btn-sm, .btn-outline-light;
+            white-space: nowrap;
+            text-transform: none;
+            padding: .5em 1em;
+        }
+
+        .toggler {
+            height: 30px;
+            width: 30px;
+            font-size: 30px;
+        }
+    }
+}
+
+// Transparent navbar for the home page
+.home .woobits-navbar {
+    position: relative;
+
+    a {
+        color: $dark;
+
+        &:hover {
+            @include alpha-color( $dark );
+        }
+    }
+
+    .sub-menu a {
+        color: white;
+
+        &:hover {
+            @include alpha-color( white );
+        }
+    }
+}
+
+// Mobile Menu
+.woobits-mobile-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: $primary;
+    color: white;
+
+    a {
+        color: white;
+
+        &:hover {
+            @include alpha-color( white );
+        }
+    }
+
+    .account {
+        padding: 1em;
+        list-style-type: none;
+        font-weight: 600;
+
+        padding-top: 3em; // Delete this
+
+        .woobits-login-button {
+            @extend .btn, .btn-outline-light;
+            display: flex;
+            align-items: center;
+            border-width: 2px;
+            text-transform: none;
+
+            .dashicons {
+                padding-right: 1.5em;
+            }
+        }
+    }
+
+    .search {
+        padding: 1em;
+
+        @import '../components/search.scss';
+    }
+}

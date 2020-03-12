@@ -1,5 +1,4 @@
 - Nav:
-    - Add login button
     - Style Mobile menu
 
 - Single product:

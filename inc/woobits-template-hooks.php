@@ -15,7 +15,6 @@ add_action( 'woobits_header', 'woobits_site_header', 20 );
  /**
   * Navigation
   */
-add_filter( 'wp_nav_menu_main-menu_items', 'woobits_add_icons_to_menu', 10, 2 );
 add_filter( 'woocommerce_add_to_cart_fragments', 'woobits_cart_counter', 10 );
 add_filter( 'woocommerce_add_to_cart_fragments', 'woobits_cart_content_preview', 10 );
   

@@ -1,0 +1,36 @@
+.woobits-search-form {
+    .wrapper {
+        border: 2px solid white;
+        border-radius: $border-radius;
+
+        &:focus-within {
+            border-color: rgba( 255, 255, 255, 0.5 );
+        }
+    }
+
+    .search-field {
+        background-color: transparent;
+        color: white;
+        border: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            color: white;
+            opacity: 1;
+        }
+    }
+
+    .search-button {
+        background-color: transparent;
+        color: white;
+        border: none;
+
+        &:focus, &:active {
+            box-shadow: none;
+            color: rgba( 255, 255, 255, 0.5 );
+        }
+    }
+}

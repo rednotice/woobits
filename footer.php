@@ -22,7 +22,7 @@
 		 */
         do_action( 'woobits_footer' ); 
         ?>
-
+        
     </footer>
 
     <?php do_action( 'woobits_after_footer' ); ?>

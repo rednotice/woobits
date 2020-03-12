@@ -36,10 +36,11 @@ function woobits_cart() {
   
         ?>
         <li class="menu-item nav-item woobits-cart">
-            <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>"  title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
-            <?php if ( $cart_count > 0 ) : ?>
-                <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
-            <?php endif; ?>
+            <a class="nav-link" href="<?php echo $cart_url; ?>"  title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
+                <span class="dashicons dashicons-cart"></span>
+                <?php if ( $cart_count > 0 ) : ?>
+                    <span class="count"><?php echo $cart_count; ?></span>
+                <?php endif; ?>
             </a>
             <ul class="woobits-cart-content sub-menu-0" style="display: none;">
                 <?php if ( $cart_count > 0 ) : ?>
@@ -63,10 +64,11 @@ function woobits_cart_counter( $fragments ) {
     $cart_total = WC()->cart->get_cart_total();
     
     ?>
-    <a class="woobits-cart-icon nav-link" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
-    <?php if ( $cart_count > 0 ) : ?>
-        <span class="woobits-cart-count"><?php echo $cart_count; ?></span>
-    <?php endif; ?>
+    <a class="nav-link" href="<?php echo $cart_url; ?>" title="<?php _e( 'View your shopping cart', 'woobits' ); ?>">
+        <span class="dashicons dashicons-cart"></span>
+        <?php if ( $cart_count > 0 ) : ?>
+            <span class="count"><?php echo $cart_count; ?></span>
+        <?php endif; ?>
     </a>
     <?php
  
@@ -97,12 +99,13 @@ function woobits_cart_content_preview( $fragments ) {
 }
 
 // Creates Cart Icon Shortcode
-add_shortcode ('woobits_search', 'woobits_search' );
+add_shortcode( 'woobits_search', 'woobits_search' );
 function woobits_search() {
 	ob_start();
         ?>
-        <li class="menu-item nav-item">
-            <a class="woobits-search-icon nav-link" title="Search">
+        <li class="menu-item nav-item woobits-search">
+            <a class="nav-link woobits-search-icon" title="Search">
+                <span class="dashicons dashicons-search"></span>
             </a>
             <ul style="display: none;" class="woobits-searchform">
                 <?php get_search_form(); ?>
@@ -114,45 +117,37 @@ function woobits_search() {
 }
 
 // Creates login button shortcode
-add_shortcode ('woobits_login', 'woobits_login' );
-function woobits_login() {
+add_shortcode( 'woobits_account', 'woobits_account' );
+function woobits_account() {
 	ob_start();
         ?>
-        <li class="menu-item nav-item">
+        <li class="menu-item nav-item woobits-account">
             <?php if( is_user_logged_in() ) : ?>
-                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-link">
+                <a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                     <?php printf( __( 'Hello, %s', 'woobits' ), wp_get_current_user()->display_name ); ?>
                 </a>
-                <ul class="woobits-account-menu sub-menu-0" style="display: none;">
+                <ul class="woobits-account-menu sub-menu sub-menu-0">
                     <li class="menu-item nav-item">
-                        <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-link">
+                        <a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                            <?php _e( 'My Account', 'woobits' ); ?>
                         </a>
                     </li>
                     <li class="menu-item nav-item">
-                        <a href="<?php echo wc_logout_url(); ?>" class="nav-link">
+                        <a class="nav-link" href="<?php echo wc_logout_url(); ?>">
                             <?php _e( 'Logout', 'woobits' ); ?>
                         </a>
                     </li>
                 </ul>
             <?php else : ?>
-                <a class="woobits-login-button" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="My Account">
+                <a class="nav-link woobits-login-button" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="My Account">
                     <span class="dashicons dashicons-admin-users"></span>
-                    <?php _e( 'Login', 'woobits' ) ?>
+                    <span><?php _e( 'Login', 'woobits' ) ?></span>
                 </a>
             <?php endif; ?>
         </li>
         <?php
 	        
     return ob_get_clean();
-}
-
-// Add Cart Menu Item Shortcode to particular menu
-function woobits_add_icons_to_menu ( $items, $args ) {
-        $items .=  do_shortcode('[woobits_search]');
-        $items .=  do_shortcode('[woobits_cart]');
-        $items .=  do_shortcode('[woobits_login]');
-        return $items;
 }
 
 /**
