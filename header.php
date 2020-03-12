@@ -33,11 +33,18 @@
 
     </header>
 
-    <?php do_action( 'woobits_before_content' ); ?>
+    <?php 
+    /**
+     * Functions hooked into woobits_before_content action
+     *
+     * @hooked woobits_mobile-menu - 10
+     */
+    do_action( 'woobits_before_content' ); 
+    ?>
 
     <nav class="woobits-mobile-menu-container">
-        <div class="account">
-            <?php echo do_shortcode( '[woobits_account]' ); ?>
+        <div class="search">
+            <?php get_search_form(); ?>
         </div>
 
         <?php
@@ -51,8 +58,8 @@
             );
         ?>
 
-        <div class="search">
-            <?php get_search_form(); ?>
+        <div class="account">
+            <?php echo do_shortcode( '[woobits_account]' ); ?>
         </div>
     </nav>
 

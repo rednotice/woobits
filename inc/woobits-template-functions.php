@@ -123,7 +123,7 @@ function woobits_account() {
         ?>
         <li class="menu-item nav-item woobits-account">
             <?php if( is_user_logged_in() ) : ?>
-                <a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+                <a class="nav-link greeting" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                     <?php printf( __( 'Hello, %s', 'woobits' ), wp_get_current_user()->display_name ); ?>
                 </a>
                 <ul class="woobits-account-menu sub-menu sub-menu-0">
