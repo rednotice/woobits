@@ -28,7 +28,9 @@
     width: 100% !important;
 } 
 
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price, 
+.woobits-purchase-modal .price {
     font-size: 1.5em !important;
     font-weight: bold;
     text-align: center;
@@ -45,7 +47,8 @@
     }
 }
 
-.woocommerce div.product form.cart {
+.woocommerce div.product form.cart,
+.woobits-purchase-modal form.cart {
     margin-bottom: 0;
 
     .variations {

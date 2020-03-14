@@ -36,8 +36,8 @@
                     ?>
 
                     <div class="action-buttons">
-                        <button class="purchase-button"><?php _e( 'Purchase', 'woobits' ); ?></button>
-                        
+                        <button class="purchase-button" data-toggle="modal" data-target="#purchaseModal"><?php _e( 'Purchase', 'woobits' ); ?></button>
+
                         <a href="#" class="preview-button"><?php _e( 'Live Preview', 'woobits' ); ?></a>
                     </div>
                 </div>
@@ -47,3 +47,5 @@
         </div>
     </div>
 </div>
+
+<?php get_template_part( 'templates/modal', 'purchase' ) ?>

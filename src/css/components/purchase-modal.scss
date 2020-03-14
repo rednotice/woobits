@@ -1,0 +1,17 @@
+.woobits-purchase-modal {
+    color: $dark;
+    font-weight: bold;
+
+    .woobits-sidebar-widget {
+        margin-bottom: 0;
+    }
+
+    .close {
+        position: absolute;
+        top: .2em;
+        right: .5em;
+        color: white;
+        opacity: 1;
+        font-size: 1.75em;
+    }
+}

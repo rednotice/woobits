@@ -11,6 +11,7 @@
   */
 add_action( 'woobits_header', 'woobits_primary_navigation', 10 );
 add_action( 'woobits_header', 'woobits_site_header', 20 );
+add_action( 'woobits_purchase_modal', 'woobits_purchase_box_widget', 10 );
 
  /**
   * Navigation

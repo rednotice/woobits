@@ -1,6 +1,5 @@
 - Single product:
-    - Sync variation forms
-    - Add purchase button modal
+    - Fix variation form jump
     - Add excerpt as "In Short" widget to sidebar
     - Add custom fields:
         - Live Preview Link
@@ -24,4 +23,4 @@
 
 - License
 
--> Sell
+-> Sell (69 USD)
