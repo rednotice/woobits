@@ -150,6 +150,32 @@ function woobits_account() {
     return ob_get_clean();
 }
 
+// Mobile menu 
+function woobits_mobile_menu() {
+    ?>
+    <nav class="woobits-mobile-menu-container" <?php if( is_admin_bar_showing() ) : echo 'style="top:32px;"'; endif; ?>>
+        <div class="search">
+            <?php get_search_form(); ?>
+        </div>
+
+        <?php
+            wp_nav_menu( 
+                [ 
+                    'theme_location' => 'main-menu',
+                    'container' => false,
+                    'menu_id' => 'woobitsMainMenu',
+                    'menu_class' => 'woobits-main-menu',
+                ] 
+            );
+        ?>
+
+        <div class="account">
+            <?php echo do_shortcode( '[woobits_account]' ); ?>
+        </div>
+    </nav>
+    <?php
+}
+
 /**
  * Footer
  */

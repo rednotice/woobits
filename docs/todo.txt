@@ -1,6 +1,3 @@
-- Nav:
-    - Style Mobile menu
-
 - Single product:
     - Add excerpt as "In Short" widget to sidebar
     - Add custom fields ('Product Information) to sidebar & admin edit product

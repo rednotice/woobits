@@ -2,6 +2,8 @@
     .wrapper {
         border: 2px solid white;
         border-radius: $border-radius;
+        flex-wrap: nowrap;
+        overflow: hidden;
 
         &:focus-within {
             border-color: rgba( 255, 255, 255, 0.5 );

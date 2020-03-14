@@ -37,31 +37,10 @@
     /**
      * Functions hooked into woobits_before_content action
      *
-     * @hooked woobits_mobile-menu - 10
+     * @hooked woobits_mobile_menu - 10
      */
     do_action( 'woobits_before_content' ); 
     ?>
-
-    <nav class="woobits-mobile-menu-container">
-        <div class="search">
-            <?php get_search_form(); ?>
-        </div>
-
-        <?php
-            wp_nav_menu( 
-                [ 
-                    'theme_location' => 'main-menu',
-                    'container' => false,
-                    'menu_id' => 'woobitsMainMenu',
-                    'menu_class' => 'woobits-main-menu',
-                ] 
-            );
-        ?>
-
-        <div class="account">
-            <?php echo do_shortcode( '[woobits_account]' ); ?>
-        </div>
-    </nav>
 
     <div class="woobits-wrapper">
         <div class="woobits-container">

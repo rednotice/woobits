@@ -24,7 +24,7 @@
                     'theme_location' => 'main-menu',
                     'container' => false,
                     'menu_id' => 'woobitsMainMenu',
-                    'menu_class' => 'd-none d-lg-block woobits-main-menu',
+                    'menu_class' => 'd-none d-lg-flex woobits-main-menu',
                 ] 
             );
         ?>
