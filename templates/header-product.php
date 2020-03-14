@@ -35,8 +35,10 @@
                     do_action( 'woobits_after_product_header_title' ); 
                     ?>
 
-                    <div class="purchase-button">
-                        <button><?php _e( 'Purchase', 'woobits' ); ?></button>
+                    <div class="action-buttons">
+                        <button class="purchase-button"><?php _e( 'Purchase', 'woobits' ); ?></button>
+                        
+                        <a href="#" class="preview-button"><?php _e( 'Live Preview', 'woobits' ); ?></a>
                     </div>
                 </div>
 

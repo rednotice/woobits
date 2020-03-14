@@ -107,7 +107,6 @@
     height: auto;
 }
 
-
 // Shop Page
 .woocommerce ul.products li.product a img {
     margin-bottom: 0;
@@ -274,7 +273,6 @@
 
 // My Account - Login & Register Page
 .woocommerce-account {
-
     .woocommerce-form-login, .woocommerce-form-register {
         background-color: $light;
         margin-top: 0 !important;
@@ -297,11 +295,11 @@
                 line-height: 2;
             }
         }
+    }
 
-        @media screen and (min-width: 769) {
-            ul {
-                margin-bottom: 0;
-            }
+    @media screen and (min-width: 769) {
+        ul {
+            margin-bottom: 0 !important;
         }
     }
 }
