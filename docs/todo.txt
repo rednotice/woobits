@@ -1,8 +1,10 @@
 - Single product:
+    - Sync variation forms
+    - Add purchase button modal
     - Add excerpt as "In Short" widget to sidebar
-    - Add custom fields ('Product Information) to sidebar & admin edit product
-    - Header: Add purchase button -> Modal with variations and add to cart form
-    - Fix variations form active class bug
+    - Add custom fields:
+        - Live Preview Link
+        - Product Information
 
 - Bug Fixes:
     - Post preview image size

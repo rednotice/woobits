@@ -39,10 +39,11 @@ $(document).on('change', '.variation-radios input', function() {
 
 $('.variation-radios input').click(function () {
     $('.variation-radios input').each(function() {
-        if ($(this).is(':checked')) {
-            $('.form-' + $(this).attr('id')).addClass('active');
+        console.log($(this).is(':checked'));
+        if($(this).is(':checked')) {
+            $(this).parent().addClass('active');
         } else {
-            $('.form-' + $(this).attr('id')).removeClass('active');
+            $(this).parent().removeClass('active');
         }
     });
 });
