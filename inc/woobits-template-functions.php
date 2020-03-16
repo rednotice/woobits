@@ -283,12 +283,27 @@ function woobits_product_information_widget() {
     ?> 
     <aside class="woobits-sidebar-widget widget clearfix">
         <h6 class="title"><?php _e( 'Product Information', 'woobits' ); ?> </h6>
-        <div>
+        <div class="content">
             <?php 
-                // do_action('woobits_product_information_widget'); 
-
-                the_meta();
+                // do_action('woobits_product_information_widget');
             ?>
+
+            <div class="woobits-product-features container">
+                <?php
+                    $product_features = get_post_meta( get_the_ID(), '_woobits_product_features', true );
+                    if( $product_features ) {
+                        foreach( $product_features as $name => $description ) {
+                            ?>
+                            <div class="row">
+                                <span class="name"><?php echo esc_html( $name ); ?></span>
+                                <span class="description"><?php echo esc_html( $description ); ?></span>
+                            </div>
+                            <?php
+                        }
+                    }
+                ?>
+            </div>
+
         </div>
     </aside>
     <?php

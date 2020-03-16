@@ -3,10 +3,12 @@
     - Add excerpt as "In Short" widget to sidebar
 
 - Bug Fixes:
+    - Mobile nav slider
     - Post preview image size
     - Child comments
 
 -> Use in production:
+    - Find brand name and buy domain
     - Landing Page
     - About Us
     - TOS
