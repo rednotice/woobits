@@ -1,15 +1,16 @@
 - Single product:
-    - Fix variation form jump
+    - Add custom fields: Product Information
     - Add excerpt as "In Short" widget to sidebar
-    - Add custom fields:
-        - Live Preview Link
-        - Product Information
 
 - Bug Fixes:
     - Post preview image size
     - Child comments
 
--> Use in production
+-> Use in production:
+    - Landing Page
+    - About Us
+    - TOS
+    - Privacy Policy
 
 - Cleanup & comment code
 

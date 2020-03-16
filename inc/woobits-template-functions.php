@@ -263,7 +263,7 @@ function woobits_display_comments() {
  */
 function woobits_purchase_box_widget() {
     ?> 
-    <aside class="woobits-sidebar-widget widget widget_search clearfix">
+    <aside class="woobits-sidebar-widget widget clearfix">
         <h6 class="title"><?php _e( 'Download Details', 'woobits' ); ?> </h6>
         <div>
             <?php 
@@ -273,6 +273,21 @@ function woobits_purchase_box_widget() {
                  * @hooked woocommerce_template_single_add_to_cart - 10
                  */
                 do_action('woobits_purchase_box_widget'); 
+            ?>
+        </div>
+    </aside>
+    <?php
+}
+
+function woobits_product_information_widget() {
+    ?> 
+    <aside class="woobits-sidebar-widget widget clearfix">
+        <h6 class="title"><?php _e( 'Product Information', 'woobits' ); ?> </h6>
+        <div>
+            <?php 
+                // do_action('woobits_product_information_widget'); 
+
+                the_meta();
             ?>
         </div>
     </aside>

@@ -13,6 +13,7 @@ if( is_active_sidebar( 'product' ) && function_exists( 'is_product') && is_produ
 			 * Functions hooked in to woobits_purchase_box add_action
 			 * 
 			 * @hooked woobits_purchase_box_widget - 10
+			 * @hooked woobits_product_information_widget - 20
 			 */
 			do_action( 'woobits_product_sidebar');
 

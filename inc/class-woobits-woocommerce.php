@@ -11,8 +11,82 @@ if ( ! class_exists( 'Woobits_Woocommerce' ) ) {
   {
     public function __construct()
     {
-        add_action( 'widgets_init', array( $this, 'register_sidebars' ), 11 );
-        add_filter('woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2);
+      add_action( 'add_meta_boxes', array( $this, 'register_preview_link_meta_box' ), 1 );
+      add_action( 'save_post_product', array( $this, 'save' ), 10 );
+
+      add_action( 'widgets_init', array( $this, 'register_sidebars' ), 11 );
+      add_filter('woocommerce_dropdown_variation_attribute_options_html', array( $this, 'variation_radio_buttons' ), 20, 2);
+    }
+
+    public function register_preview_link_meta_box() 
+    {
+      add_meta_box(
+        'woobits_preview_link',
+        __('Live Preview URL', 'woobits'),
+        array( $this, 'render_preview_link_meta_box' ),
+        'product',
+        'normal',
+        'high'
+      );
+    }
+
+    public function render_preview_link_meta_box() 
+    {
+      // Add an nonce field so we can check for it later.
+      wp_nonce_field( 'woobits_preview_link', 'woobits_preview_link_nonce' );
+
+      // Use get_post_meta to retrieve an existing value from the database.
+      global $post_id;
+      $value = get_post_meta( $post_id, '_woobits_preview_link', true ) ?? '';
+
+      // Display the form, using the current value.
+      ?>
+      <input 
+        type="text" 
+        id="woobits_preview_link" 
+        name="woobits_preview_link"
+        class="woobits-preview-link"
+        style="width: 100%;"
+        value="<?php echo esc_attr( $value ); ?>"
+        aria-label="<?php _e( 'Live Preview URL', 'woobits' ); ?>"
+      />
+      <?php
+    }
+
+    public function save( int $post_id ) 
+    {
+      //Verify nonce
+      if ( ! isset( $_POST['woobits_preview_link_nonce'] ) ) {
+          return $post_id;
+      }
+
+      $nonce = $_POST['woobits_preview_link_nonce'];
+
+      if ( ! wp_verify_nonce( $nonce, 'woobits_preview_link' ) ) {
+          return $post_id;
+      }
+
+      // Do nothing, if there is an autosave.
+      if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+          return $post_id;
+      }
+
+      // Check the user's permissions.
+      if ( 'page' == $_POST['post_type'] ) {
+          if ( ! current_user_can( 'edit_page', $post_id ) ) {
+              return $post_id;
+          }
+      } else {
+          if ( ! current_user_can( 'edit_post', $post_id ) ) {
+              return $post_id;
+          }
+      }
+
+      // Sanitize the user input.
+      $data = esc_url_raw( $_POST['woobits_preview_link'] );
+
+      // Update the meta field.
+      update_post_meta( $post_id, '_woobits_preview_link', $data );
     }
 
     public function register_sidebars()

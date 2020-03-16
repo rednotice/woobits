@@ -38,7 +38,15 @@
                     <div class="action-buttons">
                         <button class="purchase-button" data-toggle="modal" data-target="#purchaseModal"><?php _e( 'Purchase', 'woobits' ); ?></button>
 
-                        <a href="#" class="preview-button"><?php _e( 'Live Preview', 'woobits' ); ?></a>
+                        <?php if( get_post_meta( get_the_ID(), "_woobits_preview_link", true ) ) : ?>
+                            <a 
+                                href='<?php echo esc_url( get_post_meta( get_the_ID(), "_woobits_preview_link", true ) ); ?>' 
+                                class="preview-button"
+                                target="_blank"
+                            >
+                                <?php _e( 'Live Preview', 'woobits' ); ?>
+                            </a>
+                        <?php endif; ?>
                     </div>
                 </div>
 
