@@ -1,7 +1,8 @@
 - Bug Fixes:
-    - Mobile nav slider
-    - Post preview image size
+    - Blog Overview Columns
     - Child comments
+    - Post preview image size
+    - Add back to overview link to single
     - Woocommerce dependency
 
 - Single product:
