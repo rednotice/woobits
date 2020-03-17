@@ -267,46 +267,39 @@ function woobits_purchase_box_widget() {
         <h6 class="title"><?php _e( 'Download Details', 'woobits' ); ?> </h6>
         <div>
             <?php 
-                /**
-                 * Functions hooked in to woobits_purchase_box_widget add_action
-                 * 
-                 * @hooked woocommerce_template_single_add_to_cart - 10
-                 */
-                do_action('woobits_purchase_box_widget'); 
+            /**
+             * Functions hooked in to woobits_purchase_box_widget add_action
+             * 
+             * @hooked woocommerce_template_single_add_to_cart - 10
+             */
+            do_action('woobits_purchase_box_widget'); 
             ?>
         </div>
     </aside>
     <?php
 }
 
-function woobits_product_information_widget() {
+function woobits_product_feature_widget() {
+    $product_features = get_post_meta( get_the_ID(), '_woobits_product_features', true );
+    if( $product_features ) {
     ?> 
     <aside class="woobits-sidebar-widget widget clearfix">
         <h6 class="title"><?php _e( 'Product Information', 'woobits' ); ?> </h6>
-        <div class="content">
-            <?php 
-                // do_action('woobits_product_information_widget');
-            ?>
-
-            <div class="woobits-product-features container">
+            <div class="woobits-product-feature-widget">
                 <?php
-                    $product_features = get_post_meta( get_the_ID(), '_woobits_product_features', true );
-                    if( $product_features ) {
-                        foreach( $product_features as $name => $description ) {
-                            ?>
-                            <div class="row">
-                                <span class="name"><?php echo esc_html( $name ); ?></span>
-                                <span class="description"><?php echo esc_html( $description ); ?></span>
-                            </div>
-                            <?php
-                        }
+                    foreach( $product_features as $name => $description ) {
+                        ?>
+                        <div class="wrapper">
+                            <span class="name"><?php echo esc_html( $name ); ?></span>
+                            <span class="description"><?php echo esc_html( $description ); ?></span>
+                        </div>
+                        <?php
                     }
                 ?>
             </div>
-
-        </div>
     </aside>
     <?php
+    }
 }
 
 /**

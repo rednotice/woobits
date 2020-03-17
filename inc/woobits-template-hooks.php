@@ -75,9 +75,11 @@ add_action( 'woobits_after_product_header_title', 'woocommerce_template_single_r
 
 // Purchase Box Sidebar Widget
 add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 10 );
-add_action( 'woobits_product_sidebar', 'woobits_product_information_widget', 20 );
 add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_price', 10 ); 
 add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_add_to_cart', 20 );
+
+add_action( 'woobits_product_sidebar', 'woobits_product_feature_widget', 20 ); 
+
 
 /**
  * Product Archives

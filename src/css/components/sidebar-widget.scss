@@ -15,3 +15,23 @@
         border-radius: $border-radius;
     }
 }
+
+.woobits-product-feature-widget {
+    @extend .container;
+
+    .wrapper {
+        @extend .row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding-top: .5em;
+        padding-bottom: .5em;
+
+        span {
+            max-width: 45%;
+        }
+
+        .name {
+            font-weight: 600;
+        }
+    }
+}

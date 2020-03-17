@@ -1,11 +1,11 @@
-- Single product:
-    - Add custom fields: Product Information
-    - Add excerpt as "In Short" widget to sidebar
-
 - Bug Fixes:
     - Mobile nav slider
     - Post preview image size
     - Child comments
+    - Woocommerce dependency
+
+- Single product:
+    - Add excerpt as "In Short" widget to sidebar
 
 -> Use in production:
     - Find brand name and buy domain
