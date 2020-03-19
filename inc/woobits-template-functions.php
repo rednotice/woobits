@@ -232,8 +232,10 @@ function woobits_tags() {
 function woobits_post_navigation() {
     ?>
     <div class="navigation">
-        <span class="link"><?php previous_post_link(); ?></span>
-        <span class="link"><?php next_post_link(); ?> </span>
+        <span class="link previous">
+            <?php previous_post_link( '%link', __( 'Previous Post', 'woobits' ) ); ?>
+        </span>
+        <span class="link next"><?php next_post_link( '%link', __( 'Next Post', 'woobits' ) ); ?> </span>
     </div>
     <?php
 }
@@ -241,11 +243,11 @@ function woobits_post_navigation() {
 function woobits_posts_navigation() {
     ?>
     <div class="navigation">
-        <div class="previous">
-            <?php previous_posts_link(); ?>
+        <div class="link previous">
+            <?php previous_posts_link( __( 'Previous Page', 'woobits' ) ); ?>
         </div>
-        <div class="next">
-            <?php next_posts_link(); ?>
+        <div class="link next">
+            <?php next_posts_link( __( 'Next Page', 'woobits' ) ); ?>
         </div>
     </div>
     <?php

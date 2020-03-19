@@ -1,7 +1,7 @@
 - Bug Fixes:
+    - Add back to overview link to single
     - Child comments
     - Post preview image size
-    - Add back to overview link to single
     - Woocommerce dependency
 
 - Single product:
@@ -26,4 +26,4 @@
 
 - License
 
--> Sell (69 USD)
+-> Sell (99 USD)

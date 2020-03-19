@@ -2,7 +2,36 @@
     .navigation {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+
+        .link {
+            text-transform: uppercase;
+            font-weight: 600;
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .previous a {
+            &::before {
+                font-family: 'dashicons';
+                content: '\f341';
+                font-size: 1.5em;
+                margin-right: .15em;
+            }
+        }
+
+        .next a {
+            &::after {
+                font-family: 'dashicons';
+                content: '\f345';
+                font-size: 1.5em;
+                margin-left: .15em;
+            }
+        }
     }
 
     .categories, .tags {
