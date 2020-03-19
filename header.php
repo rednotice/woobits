@@ -18,6 +18,8 @@
 
 </head>
 <body <?php body_class(); ?>>
+
+    <div class="woobits-main-container">
     
     <header id="masthead" class="woobits-site-header">
 
@@ -42,6 +44,6 @@
     do_action( 'woobits_before_content' ); 
     ?>
 
-    <div class="woobits-container">
+    <section class="woobits-content">
         <div class="woobits-row">
             

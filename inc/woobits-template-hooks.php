@@ -19,7 +19,6 @@ add_action( 'woobits_purchase_modal', 'woobits_purchase_box_widget', 10 );
 add_filter( 'woocommerce_add_to_cart_fragments', 'woobits_cart_counter', 10 );
 add_filter( 'woocommerce_add_to_cart_fragments', 'woobits_cart_content_preview', 10 );
 add_action( 'woobits_before_content', 'woobits_mobile_menu', 10 );
-  
 
  /**
   * Footer

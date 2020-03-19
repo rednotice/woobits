@@ -29,7 +29,8 @@ add_action('wp_enqueue_scripts', 'ww_load_dashicons', 1);
 // Creates Cart Icon Shortcode
 add_shortcode ('woobits_cart', 'woobits_cart' );
 function woobits_cart() {
-	ob_start();
+    if( class_exists( 'woocommerce' ) ) {
+        ob_start();
  
         $cart_count = WC()->cart->cart_contents_count;
         $cart_url = wc_get_cart_url();
@@ -52,7 +53,10 @@ function woobits_cart() {
         </li>
         <?php
 	        
-    return ob_get_clean();
+        return ob_get_clean();
+    }
+	        
+    return false;
 }
 
 // Updates counter using AJAX when cart content changes
@@ -119,35 +123,39 @@ function woobits_search() {
 // Creates login button shortcode
 add_shortcode( 'woobits_account', 'woobits_account' );
 function woobits_account() {
-	ob_start();
-        ?>
-        <li class="menu-item nav-item woobits-account">
-            <?php if( is_user_logged_in() ) : ?>
-                <a class="nav-link greeting" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-                    <?php printf( __( 'Hello, %s', 'woobits' ), wp_get_current_user()->display_name ); ?>
-                </a>
-                <ul class="woobits-account-menu sub-menu sub-menu-0">
-                    <li class="menu-item nav-item">
-                        <a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
-                           <?php _e( 'My Account', 'woobits' ); ?>
-                        </a>
-                    </li>
-                    <li class="menu-item nav-item">
-                        <a class="nav-link" href="<?php echo wc_logout_url(); ?>">
-                            <?php _e( 'Logout', 'woobits' ); ?>
-                        </a>
-                    </li>
-                </ul>
-            <?php else : ?>
-                <a class="nav-link woobits-login-button" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="My Account">
-                    <span class="dashicons dashicons-admin-users"></span>
-                    <span><?php _e( 'Login', 'woobits' ) ?></span>
-                </a>
-            <?php endif; ?>
-        </li>
-        <?php
+    if( class_exists( 'woocommerce' ) ) {
+        ob_start();
+            ?>
+            <li class="menu-item nav-item woobits-account">
+                <?php if( is_user_logged_in() ) : ?>
+                    <a class="nav-link greeting" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+                        <?php printf( __( 'Hello, %s', 'woobits' ), wp_get_current_user()->display_name ); ?>
+                    </a>
+                    <ul class="woobits-account-menu sub-menu sub-menu-0">
+                        <li class="menu-item nav-item">
+                            <a class="nav-link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
+                            <?php _e( 'My Account', 'woobits' ); ?>
+                            </a>
+                        </li>
+                        <li class="menu-item nav-item">
+                            <a class="nav-link" href="<?php echo wc_logout_url(); ?>">
+                                <?php _e( 'Logout', 'woobits' ); ?>
+                            </a>
+                        </li>
+                    </ul>
+                <?php else : ?>
+                    <a class="nav-link woobits-login-button" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="My Account">
+                        <span class="dashicons dashicons-admin-users"></span>
+                        <span><?php _e( 'Login', 'woobits' ) ?></span>
+                    </a>
+                <?php endif; ?>
+            </li>
+            <?php
 	        
-    return ob_get_clean();
+        return ob_get_clean();
+    }
+    
+    return false;
 }
 
 // Mobile menu 

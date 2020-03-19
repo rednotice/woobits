@@ -25,7 +25,7 @@ if ( ! class_exists( 'Woobits_Scripts' ) ) {
             wp_register_script( 
                 'bundle_js', 
                 get_template_directory_uri() . '/dist/bundle.js', 
-                'jquery',
+                array( 'jquery' ),
                 false,
                 true 
             );

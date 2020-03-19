@@ -1,4 +1,11 @@
-.woobits-container {
+.woobits-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.woobits-content {
     @extend .container-fluid;
     padding: 2em;
 }

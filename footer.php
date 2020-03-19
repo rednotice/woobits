@@ -6,8 +6,8 @@
  */
  ?>
 
-        </div> <!-- .woobits-container -->
-    </div> <!-- .woobits-wrapper -->
+            </div> <!-- .woobits-wrapper -->
+        </section> <!-- .woobits-content -->
 
     <?php do_action( 'woobits_after_content' ); ?>
 
@@ -26,6 +26,8 @@
     </footer>
 
     <?php do_action( 'woobits_after_footer' ); ?>
+
+    </div> <!-- .woobits-main-container -->
 
     <?php wp_footer(); ?>
 
