@@ -42,6 +42,6 @@
     do_action( 'woobits_before_content' ); 
     ?>
 
-    <div class="woobits-wrapper">
-        <div class="woobits-container">
+    <div class="woobits-container">
+        <div class="woobits-row">
             

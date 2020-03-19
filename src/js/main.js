@@ -60,3 +60,12 @@ $(document).keyup(function(e) {
         $('.wpbsearchform').hide();
     }
 });
+
+// These classea re used to reduce width of main content on desktop when sidebar is active.
+if($.contains(document, $('#secondary')[0])) {
+    $('#primary').addClass('with-sidebar');
+}
+
+if($.contains(document, $('#secondary.shop')[0])) {
+    $('#primary').addClass('with-sidebar-shop');
+}

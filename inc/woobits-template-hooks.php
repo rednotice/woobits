@@ -72,7 +72,6 @@ add_action( 'woocommerce_single_product_summary', 'woobits_purchase_box_widget',
 add_action( 'woocommerce_after_single_product_summary', 'woobits_display_product_reviews', 15 );
 add_action( 'woobits_after_product_header_title', 'woocommerce_template_single_rating', 20);
 
-
 // Purchase Box Sidebar Widget
 add_action( 'woobits_product_sidebar', 'woobits_purchase_box_widget', 10 );
 add_action( 'woobits_purchase_box_widget', 'woocommerce_template_single_price', 10 ); 
@@ -84,5 +83,5 @@ add_action( 'woobits_product_sidebar', 'woobits_product_feature_widget', 20 );
 /**
  * Product Archives
  */
-add_filter( 'woocommerce_show_page_title', 'woobits_hide_shop_page_title' );
+add_filter( 'woocommerce_show_page_title', '__return_false' );
 add_action( 'woocommerce_after_shop_loop_item', 'woobits_remove_add_to_cart_buttons', 1 );

@@ -22,14 +22,14 @@ if( is_active_sidebar( 'product' ) && function_exists( 'is_product') && is_produ
 	</div><!-- #secondary -->
 	<?php
 
-elseif( is_active_sidebar( 'shop' ) && function_exists( 'is_shop') && is_shop() || is_product_category() || is_product_tag() ) :
+elseif( is_active_sidebar( 'shop' ) && function_exists( 'is_shop') && ( is_shop() || is_product_category() || is_product_tag() ) ) :
 	?>
 	<div id="secondary" class="widget-area shop" role="complementary">
 		<?php dynamic_sidebar( 'shop' ); ?>
 	</div><!-- #secondary -->
 	<?php
 
-elseif( is_active_sidebar( 'blog' ) && is_single() || is_home() || is_archive() ) :
+elseif( is_active_sidebar( 'blog' ) && ( is_single() || is_home() || is_archive() ) ) :
 	?>
 	<div id="secondary" class="widget-area blog" role="complementary">
 		<?php dynamic_sidebar( 'blog' ); ?>

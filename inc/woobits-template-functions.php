@@ -326,14 +326,6 @@ function woobits_display_product_reviews() {
 }
 
 /**
- * Hides the title on the shop page.
- */
-function woobits_hide_shop_page_title( $title ) {
-    if ( is_shop() ) $title = false;
-    return $title;
-}
-
-/**
  * Removes the add to cart buttons on product archive pages.
  */
 function woobits_remove_add_to_cart_buttons() {

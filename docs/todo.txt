@@ -1,5 +1,4 @@
 - Bug Fixes:
-    - Blog Overview Columns
     - Child comments
     - Post preview image size
     - Add back to overview link to single
