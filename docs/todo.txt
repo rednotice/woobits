@@ -1,7 +1,9 @@
-- Bug Fixes:
-    - Child comments
+Features:
+    - Add excerpt to single product
 
-- Add excerpt to single product
+Bugs:
+    - Blog Header: Author and Date doesn't show
+    - Mobile menu closes upon click on search form
 
 -> Use in production:
     - Find brand name and buy domain

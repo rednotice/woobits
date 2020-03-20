@@ -35,6 +35,12 @@ class Woobits {
 }
 new Woobits();
 
+// Reply link for comments
+function load_script_for_fake_threading() {
+    if( is_singular() ) wp_enqueue_script( 'comment-reply' );
+}
+add_action( 'wp_enqueue_scripts', 'load_script_for_fake_threading' );
+
 
 // Breadcrumbs
 function the_breadcrumb() {

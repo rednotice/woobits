@@ -35,6 +35,7 @@
                     'style'         => 'div',
                     'short_ping'    => true,
                     'avatar_size'   => 60,
+                    'max_depth'     => 1,
                     'walker'        => new Woobits_Walker_Comment()
                 ) );
                 ?>

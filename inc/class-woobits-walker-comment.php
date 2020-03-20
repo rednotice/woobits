@@ -58,6 +58,12 @@ if ( ! class_exists( 'Woobits_Walker_Comment' ) ) {
 
 			<div class="comment-box">
 
+				<?php if( $comment->comment_parent ) : $parent = get_comment( $comment->comment_parent ); ?>
+					<div class="response-to">
+						<a href="<?php echo esc_url( get_comment_link( $parent ) ); ?>">@ <?php echo get_comment_author( $parent ); ?></a>
+					</div>
+				<?php endif; ?>
+
 				<div class="comment-meta commentmetadata">
 					<a class="comment-author" href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
 						<?php
@@ -104,9 +110,12 @@ if ( ! class_exists( 'Woobits_Walker_Comment' ) ) {
 					array_merge(
 						$args,
 						array(
+							'reply_text' => __( 'Reply', 'woobits' ), 
+							'depth' => 1, 
+							'max_depth' => 2,
 							'add_below' => $add_below,
-							'depth'     => $depth,
-							'max_depth' => $args['max_depth'],
+							// 'depth'     => $depth,
+							// 'max_depth' => $args['max_depth'],
 							'before'    => '<div class="reply">',
 							'after'     => '</div>',
 						)
