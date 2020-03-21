@@ -1,9 +1,12 @@
 .woobits-purchase-modal {
     color: $dark;
-    font-weight: bold;
 
     .woobits-sidebar-widget {
         margin-bottom: 0;
+    }
+
+    .variations_form {
+        font-weight: bold;
     }
 
     .close {

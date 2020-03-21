@@ -1,7 +1,4 @@
-Features:
-    - Add excerpt to single product
-
--> Use in production:
+Use in production:
     - Find brand name and buy domain
     - Landing Page
     - About Us

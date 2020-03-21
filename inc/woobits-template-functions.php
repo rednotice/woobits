@@ -280,7 +280,9 @@ function woobits_purchase_box_widget() {
             /**
              * Functions hooked in to woobits_purchase_box_widget add_action
              * 
-             * @hooked woocommerce_template_single_add_to_cart - 10
+             * @hooked woocommerce_template_single_price - 10
+             * @hooked woocommerce_template_single_excerpt - 20
+             * @hooked woocommerce_template_single_add_to_cart - 30
              */
             do_action('woobits_purchase_box_widget'); 
             ?>
