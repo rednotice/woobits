@@ -21,15 +21,20 @@
                 <span class="breadcrumbs"><?php the_breadcrumb(); ?></span>
                 <h1 class="title"><?php wp_title( false ); ?></h1>
                 <span class="meta">
-                    <span><?php _e('by ', 'woobits') . the_author(); ?></span>
+                    <?php if( get_the_author() ) : ?>
+                        <span><?php _e('by ', 'woobits') . the_author(); ?></span>
+                    <?php endif; ?>
 
-                    <?php $categories = get_the_category();
-                        if ( ! empty( $categories ) ) {
-                            echo '<span>' . __('in ', 'woobits') . '<a href ="' . get_category_link( $categories[0]->term_id ) . '">' . esc_html( $categories[0]->name ) . '</a></span>';   
-                        
-                    } ?>
+                    <?php if( get_the_category() ) : $categories = get_the_category(); ?>
+                        <span>
+                            <?php _e('in ', 'woobits'); ?> 
+                            <a href ="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a>
+                        </span>
+                    <?php endif; ?>
 
-                    <span><?php _e('on ', 'woobits') . the_date(); ?></span>
+                    <?php if( get_the_date() ) : ?>
+                        <span><?php _e('on ', 'woobits') . the_date(); ?></span>
+                    <?php endif; ?>
                 </span>
             </div>
         </div>

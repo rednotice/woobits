@@ -47,6 +47,10 @@
 
         .meta {
             margin-bottom: .75em;
+
+            & > * {
+                padding-right: .5em;
+            }
         }
 
         .excerpt a, &:hover {

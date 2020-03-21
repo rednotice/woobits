@@ -22,13 +22,19 @@
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h3>
         <div class="meta">
-            <small><?php _e( 'By ', 'woobits' ) . the_author(); ?></small>
+            <small>
+                <?php if( get_the_author() ) :
+                    _e('by ', 'woobits') . the_author();
+                endif; 
+                ?>
+            </small>
 
-            <?php the_date( '', '<small>| ', '</small>' ); ?>
+            <?php if( get_the_date() ) : ?>
+                <small><?php the_date(); ?></small>
+            <?php endif; ?>
 
             <?php if( comments_open() && get_comments_number() > 0 ): ?> 
                 <small>
-                    | 
                     <a href="<?php comments_link(); ?>">
                         <?php comments_number(); ?>
                     </a>
