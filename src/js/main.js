@@ -12,8 +12,9 @@ function woobitsToggleMenu(toggleWidth) {
         $('#woobitsMenuToggler').removeClass('dashicons-menu-alt');
         $('#woobitsMenuToggler').addClass('dashicons-no');
 
-        $(window).on('mousedown', function() {
-            if(!$(event.target).is('.woobits-mobile-menu-container') && !$.contains('.woobits-mobile-menu-container', event.target)) {
+        $(window).on('mousedown', function(event) {
+            const woobitsMobileMenuContainer = document.getElementById( 'woobitsMobileMenuContainer');
+            if(woobitsMobileMenuContainer !== event.target && !woobitsMobileMenuContainer.contains(event.target)) {
                 $('.woobits-mobile-menu-container').animate({ width: '0px' });
                 toggleWidth = '0px;'
                 $('#woobitsMenuToggler').removeClass('dashicons-no');

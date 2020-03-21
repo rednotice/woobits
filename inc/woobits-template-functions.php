@@ -154,14 +154,14 @@ function woobits_account() {
 	        
         return ob_get_clean();
     }
-    
+
     return false;
 }
 
 // Mobile menu 
 function woobits_mobile_menu() {
     ?>
-    <nav class="woobits-mobile-menu-container" <?php if( is_admin_bar_showing() ) : echo 'style="top:32px;"'; endif; ?>>
+    <nav id="woobitsMobileMenuContainer" class="woobits-mobile-menu-container" <?php if( is_admin_bar_showing() ) : echo 'style="top:32px;"'; endif; ?>>
         <div class="search">
             <?php get_search_form(); ?>
         </div>

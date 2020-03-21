@@ -1,6 +1,3 @@
-Bugs:
-    - Mobile menu closes upon click on search form
-
 Features:
     - Add excerpt to single product
 
