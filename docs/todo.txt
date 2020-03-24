@@ -1,9 +1,17 @@
 Use in production:
-    - Find brand name and buy domain
+    - Gsuite Daten sichern und kündigen
+    - Register youtube and instagram account
+
     - Landing Page
     - About Us
     - TOS
     - Privacy Policy
+
+codemium (CDM) www.codemium.co
+
+support@codemium.co
+
+..................
 
 - Cleanup & comment code
 
@@ -13,7 +21,7 @@ Use in production:
 
 - Improve visual flaws
 
-- Customization options
+- Customization optionsü
 
 - License
 
