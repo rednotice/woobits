@@ -1,5 +1,2 @@
 # ignore node dependency directories
 node_modules/
-
-# ignore webpack bundled files
-dist/
