@@ -158,10 +158,26 @@ function woobits_account() {
     return false;
 }
 
+function woobits_add_main_menu_items( $items, $args ) {
+        $items .= do_shortcode('[woobits_search]');
+        $items .= do_shortcode('[woobits_cart]');
+        $items .= do_shortcode('[woobits_account]');
+        $items .= '<li id="woobitsMenuToggler" class="d-lg-none dashicons dashicons-menu-alt toggler"></li>';
+    return $items;
+}
+
+// function woobits_add_page_menu_items( $menu ) {
+//     $menu .= do_shortcode( '[woobits_search]' );
+//     $menu .= do_shortcode( '[woobits_cart]' );
+//     $menu .= do_shortcode( '[woobits_account]' );
+//     $menu .= '<li id="woobitsMenuToggler" class="d-lg-none dashicons dashicons-menu-alt toggler"></li>';
+//     return $menu;
+// }
+
 // Mobile menu 
 function woobits_mobile_menu() {
     ?>
-    <nav id="woobitsMobileMenuContainer" class="woobits-mobile-menu-container" <?php if( is_admin_bar_showing() ) : echo 'style="top:32px;"'; endif; ?>>
+    <nav id="woobitsMobileMenuContainer" class="woobits-mobile-menu-container" <?php if( is_admin_bar_showing() ) : echo 'style="padding-top:32px;"'; endif; ?>>
         <div class="search">
             <?php get_search_form(); ?>
         </div>
@@ -172,7 +188,7 @@ function woobits_mobile_menu() {
                     'theme_location' => 'main-menu',
                     'container' => false,
                     'menu_id' => 'woobitsMainMenu',
-                    'menu_class' => 'woobits-main-menu',
+                    'menu_class' => 'woobits-main-menu menu',
                 ] 
             );
         ?>

@@ -11,6 +11,13 @@ codemium (CDM) www.codemium.co
 
 support@codemium.co
 
+
+CodeInABox
+
+codibird
+
+CodeIsle
+
 ..................
 
 - Cleanup & comment code

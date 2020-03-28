@@ -17,23 +17,15 @@
         } ?>
     </div>
 
-    <div class="wrapper">
-        <?php
-            wp_nav_menu( 
-                [ 
-                    'theme_location' => 'main-menu',
-                    'container' => false,
-                    'menu_id' => 'woobitsMainMenu',
-                    'menu_class' => 'd-none d-lg-flex woobits-main-menu',
-                ] 
-            );
-        ?>
-
-        <ul class="items">
-            <?php echo do_shortcode('[woobits_search]'); ?>
-            <?php echo do_shortcode('[woobits_cart]'); ?>
-            <?php echo do_shortcode('[woobits_account]'); ?>
-            <li id="woobitsMenuToggler" class="d-lg-none dashicons dashicons-menu-alt toggler"></li>
-        </ul>
-    </div>
+    <?php
+        wp_nav_menu( 
+            [ 
+                'theme_location' => 'main-menu',
+                'container' => false,
+                'menu_id' => 'woobitsMainMenu',
+                'menu_class' => 'woobits-main-menu menu',
+                'fallback_cb' => false
+            ] 
+        );
+    ?>
 </nav>
