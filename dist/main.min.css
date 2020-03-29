@@ -9350,6 +9350,8 @@ button, button, .btn, .woobits-header .woobits-product-feature-widget .wrapper .
     color: white; }
     .home .woobits-navbar .sub-menu a:hover {
       color: rgba(255, 255, 255, 0.75); }
+  .home .woobits-navbar .toggler {
+    color: black; }
 
 .woobits-mobile-menu-container {
   position: fixed;

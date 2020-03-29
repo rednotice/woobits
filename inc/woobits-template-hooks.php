@@ -13,7 +13,6 @@ add_action( 'woobits_header', 'woobits_primary_navigation', 10 );
 add_action( 'woobits_header', 'woobits_site_header', 20 );
 add_action( 'woobits_purchase_modal', 'woobits_purchase_box_widget', 10 );
 add_filter( 'wp_nav_menu_main-menu_items', 'woobits_add_main_menu_items', 10, 2 );
-// apply_filters( 'wp_page_menu', 'woobits_add_page_menu_items', 10 );
 
  /**
   * Navigation

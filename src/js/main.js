@@ -3,26 +3,31 @@ import 'bootstrap';
 
 // Mobile menu slider
 $('#woobitsMenuToggler').click(function() {
+    // Remove close event listenr
+    $(window).off('mousedown.woobitsCloseMenu');
+
+    // Toggle mobile menu
     const toggleWidth = $(".woobits-mobile-menu-container").width() == 250 ? '0px' : '250px';
-    $('.woobits-mobile-menu-container').animate({ width: toggleWidth }, woobitsToggleMenu(toggleWidth));
-});
+    $('.woobits-mobile-menu-container').animate({ width: toggleWidth });
 
-function woobitsToggleMenu(toggleWidth) {
-    if(toggleWidth == '250px') {
-        $('#woobitsMenuToggler').removeClass('dashicons-menu-alt');
-        $('#woobitsMenuToggler').addClass('dashicons-no');
+    // Toggle icons
+    if($('#woobitsMenuToggler').hasClass('dashicons-menu-alt')) {
+        $('#woobitsMenuToggler').removeClass('dashicons-menu-alt').addClass('dashicons-no');
 
-        $(window).on('mousedown', function(event) {
+        // Add close event listener to window
+        $(window).on('mousedown.woobitsCloseMenu', function(event) {
             const woobitsMobileMenuContainer = document.getElementById( 'woobitsMobileMenuContainer');
-            if(woobitsMobileMenuContainer !== event.target && !woobitsMobileMenuContainer.contains(event.target)) {
-                $('.woobits-mobile-menu-container').animate({ width: '0px' });
-                toggleWidth = '0px;'
-                $('#woobitsMenuToggler').removeClass('dashicons-no');
-                $('#woobitsMenuToggler').addClass('dashicons-menu-alt');
+            const woobitsMobileMenuToggler = document.getElementById( 'woobitsMenuToggler');
+            if(woobitsMobileMenuToggler !== event.target && woobitsMobileMenuContainer !== event.target && !woobitsMobileMenuContainer.contains(event.target)) {
+                $('#woobitsMenuToggler').trigger('click');
             }
         })
+        
+    } else {
+        $('#woobitsMenuToggler').removeClass('dashicons-no').addClass('dashicons-menu-alt');
     }
-}
+
+});
 
 // Adds hover dropdown menu to navbar on desktop devices.
 $(window).on('resize', function() {

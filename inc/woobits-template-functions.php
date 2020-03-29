@@ -166,14 +166,6 @@ function woobits_add_main_menu_items( $items, $args ) {
     return $items;
 }
 
-// function woobits_add_page_menu_items( $menu ) {
-//     $menu .= do_shortcode( '[woobits_search]' );
-//     $menu .= do_shortcode( '[woobits_cart]' );
-//     $menu .= do_shortcode( '[woobits_account]' );
-//     $menu .= '<li id="woobitsMenuToggler" class="d-lg-none dashicons dashicons-menu-alt toggler"></li>';
-//     return $menu;
-// }
-
 // Mobile menu 
 function woobits_mobile_menu() {
     ?>
@@ -189,6 +181,7 @@ function woobits_mobile_menu() {
                     'container' => false,
                     'menu_id' => 'woobitsMainMenu',
                     'menu_class' => 'woobits-main-menu menu',
+                    'fallback_cb' => false
                 ] 
             );
         ?>
