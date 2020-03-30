@@ -3,7 +3,7 @@ import 'bootstrap';
 
 // Mobile menu slider
 $('#woobitsMenuToggler').click(function() {
-    // Remove close event listenr
+    // Remove close event listener
     $(window).off('mousedown.woobitsCloseMenu');
 
     // Toggle mobile menu
@@ -22,7 +22,7 @@ $('#woobitsMenuToggler').click(function() {
                 $('#woobitsMenuToggler').trigger('click');
             }
         })
-        
+
     } else {
         $('#woobitsMenuToggler').removeClass('dashicons-no').addClass('dashicons-menu-alt');
     }

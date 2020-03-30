@@ -35,6 +35,27 @@ class Woobits {
 }
 new Woobits();
 
+
+// Check for updates
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/rednotice/woobits',
+	__FILE__,
+	'woobits'
+);
+
+// Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('403ac03febdfd126a493108f163cc4db98e6fc69');
+
+// Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('master');
+
+
+
+
+
+
+
 // Reply link for comments
 function load_script_for_fake_threading() {
     if( is_singular() ) wp_enqueue_script( 'comment-reply' );
