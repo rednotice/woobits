@@ -28,7 +28,7 @@ class Woobits {
 		new Woobits_Walker_Comment();
 		new Woobits_Scripts();
 
-		if( class_exists( 'woocommerce' ) ) {
+		if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 			new Woobits_Woocommerce();
 		}
 	}

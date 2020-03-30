@@ -29,7 +29,7 @@ add_action('wp_enqueue_scripts', 'ww_load_dashicons', 1);
 // Creates Cart Icon Shortcode
 add_shortcode ('woobits_cart', 'woobits_cart' );
 function woobits_cart() {
-    if( class_exists( 'woocommerce' ) ) {
+    if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
         ob_start();
  
         $cart_count = WC()->cart->cart_contents_count;
@@ -123,7 +123,7 @@ function woobits_search() {
 // Creates login button shortcode
 add_shortcode( 'woobits_account', 'woobits_account' );
 function woobits_account() {
-    if( class_exists( 'woocommerce' ) ) {
+    if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
         ob_start();
             ?>
             <li class="menu-item nav-item woobits-account">
