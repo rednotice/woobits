@@ -1,0 +1,42 @@
+.home {
+    .woobits-content {
+        padding: 0;
+    }
+
+    .woobits-section-1 {
+        @extend .row;
+        align-items: center;
+        padding: 5em;
+        background: $gradient;
+        min-height: 500px;
+
+        .left {
+            @extend .col-12, .col-md-6;
+            color: white;
+
+            .title {
+                font-size: 3.5rem;
+            }
+
+            .description {
+                margin-top: 1em;
+                margin-bottom: 1em;
+            }
+
+            .call-to-action {
+                @extend .btn, .btn-light;
+                border-radius: 10%/50%;
+            }
+        }
+
+        .right {
+            @extend .col-12, .col-md-6;
+            background-image: url('../img/woman_on_computer.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            padding-left: 0;
+        }
+    }
+
+}

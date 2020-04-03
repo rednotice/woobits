@@ -210,7 +210,7 @@ function woobits_footer_widgets() {
 function woobits_copyright() {
     ?>
     <div class="woobits-copyright">
-        <span>Copyright 2020 wpBits. All rights reserved.</span>
+        <span>Copyright 2020 PixelBase. All rights reserved.</span>
     </div>
     <?php
 }

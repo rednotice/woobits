@@ -6,8 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: [
-    './src/js/main.js',
-    './src/css/main.scss',
+    './src/js/main.js'
   ],
   output: {
     filename: 'bundle.js',
@@ -29,19 +28,40 @@ module.exports = {
       // Scss rules
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          // 'resolve-url-loader',
+          'sass-loader'
+        ]
       },
       // Css rules
       {
         test: /\.css$/,
-        loader: 'style-loader'
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
       },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        options: {
-          minimize: true
-        }
+      { 
+        test: /\.(png|svg|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: '/wp-content/themes/woobits/dist/images',
+            }
+          }
+        ] 
       }
     ]
   },

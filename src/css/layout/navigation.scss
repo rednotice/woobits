@@ -27,7 +27,8 @@
     }
 
     .brand {
-        @extend .navbar-brand;
+        @extend .nav-link;
+        font-size: 1.5em;
         font-weight: 700;
     }
 
@@ -48,6 +49,7 @@
 
         .woobits-search {
             cursor: pointer;
+            padding-top: 4px;
 
             .woobits-searchform {
                 @import '../components/search.scss';
@@ -63,6 +65,8 @@
         }
 
         .woobits-cart {
+            padding-top: 4px;
+
             .count {
                 @extend .badge, .badge-pill, .badge-light;
                 font-size: 12px;
@@ -117,30 +121,30 @@
     }
 }
 
-// Transparent navbar for the home page
-.home .woobits-navbar {
-    position: relative;
+// // Transparent navbar for the home page
+// .home .woobits-navbar {
+//     position: relative;
 
-    a {
-        color: $dark;
+//     a {
+//         color: $dark;
 
-        &:hover {
-            @include alpha-color( $dark );
-        }
-    }
+//         &:hover {
+//             @include alpha-color( $dark );
+//         }
+//     }
 
-    .sub-menu a {
-        color: white;
+//     .sub-menu a {
+//         color: white;
 
-        &:hover {
-            @include alpha-color( white );
-        }
-    }
+//         &:hover {
+//             @include alpha-color( white );
+//         }
+//     }
 
-    .toggler {
-        color: black;
-    }
-}
+//     .toggler {
+//         color: black;
+//     }
+// }
 
 // Mobile Menu
 .woobits-mobile-menu-container {

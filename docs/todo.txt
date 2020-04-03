@@ -3,7 +3,7 @@ Use in production:
     - Register youtube and instagram account
 
     - Landing Page
-    - About Us
+    - About Us Page
     - TOS
     - Privacy Policy
 
@@ -12,13 +12,18 @@ codemium (CDM) www.codemium.co
 support@codemium.co
 
 
-CodeInABox
-
-codibird
-
-CodeIsle
+PixelBase (PXB) www.pixelbase.co
 
 ..................
+
+Bugs:
+    - Buy Box: Show Variation description
+    - Product sidebar doesn't show if no widgets are added.
+    - WC nav items are not added before menu is saved.
+    - Footer background shows if empty.
+    - Footer Columns
+
+    - Change header titles to Category Name, Tag Name etc. (eg. remove "Product categories")
 
 - Cleanup & comment code
 

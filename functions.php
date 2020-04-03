@@ -51,11 +51,6 @@ $myUpdateChecker->setAuthentication('403ac03febdfd126a493108f163cc4db98e6fc69');
 $myUpdateChecker->setBranch('master');
 
 
-
-
-
-
-
 // Reply link for comments
 function load_script_for_fake_threading() {
     if( is_singular() ) wp_enqueue_script( 'comment-reply' );
