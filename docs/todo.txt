@@ -22,12 +22,12 @@ support@pixelbase.co
 ..................
 
 Bugs:
-    - Margins
     - Buy Box: Show Variation description
     - Product sidebar doesn't show if no widgets are added.
-    - WC nav items are not added before menu is saved.
+    - Margins
     - Footer background shows if empty.
     - Footer Columns
+    - WC nav items are not added before menu is saved.
 
 - Cleanup & comment code
 

@@ -293,7 +293,8 @@ function woobits_purchase_box_widget() {
              * @hooked woocommerce_template_single_excerpt - 20
              * @hooked woocommerce_template_single_add_to_cart - 30
              */
-            do_action('woobits_purchase_box_widget'); 
+            do_action('woobits_purchase_box_widget');
+            // do_action('woocommerce_single_product_summary');
             ?>
         </div>
     </aside>
