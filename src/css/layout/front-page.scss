@@ -1,41 +1,52 @@
 .home {
     .woobits-content {
-        padding: 0;
+        // padding: 0;
     }
 
     .woobits-section-1 {
-        @extend .row;
+        @extend .col-12;
+        display: flex;
         align-items: center;
-        padding: 5em;
-        background: $gradient;
-        min-height: 500px;
+        min-height: 450px;
+        background-image: $gradient;
+        color: white;
 
-        .left {
-            @extend .col-12, .col-md-6;
-            color: white;
+        @media screen and (min-width: 768px) {
+            min-height: 450px;
+            background-image: url('../img/woman_on_computer.png'), $gradient;
+            background-size: contain;
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (min-width: 992px) {
+            min-height: 600px;
+        }
+
+        .promo {
+            padding-left: 2em;
+
+            @media screen and (min-width: 768px) {
+                max-width: 50%;
+            }
+
+            @media screen and (min-width: 768px) {
+                padding-right: 2em;
+            }
 
             .title {
                 font-size: 3.5rem;
             }
-
+    
             .description {
                 margin-top: 1em;
                 margin-bottom: 1em;
             }
-
+    
             .call-to-action {
                 @extend .btn, .btn-light;
                 border-radius: 10%/50%;
             }
-        }
-
-        .right {
-            @extend .col-12, .col-md-6;
-            background-image: url('../img/woman_on_computer.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: 100%;
-            padding-left: 0;
         }
     }
 

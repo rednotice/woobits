@@ -1,6 +1,6 @@
 Use in production:
     - Gsuite Daten sichern und kündigen
-    - Register youtube and instagram account
+    - Register domain, wordpress, youtube and instagram account
 
     - Landing Page
     - About Us Page
