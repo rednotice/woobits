@@ -20,7 +20,7 @@ function woobits_site_header() {
     endif;
 }
 
-function ww_load_dashicons(){
+function ww_load_dashicons() {
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'ww_load_dashicons', 1);

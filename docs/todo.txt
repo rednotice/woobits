@@ -6,6 +6,10 @@ Use in production:
     - TOS
     - Privacy Policy
 
+    - License management
+    - Invoices
+    - Accounting
+
 codemium (CDM) www.codemium.co
 
 support@codemium.co
@@ -18,13 +22,12 @@ support@pixelbase.co
 ..................
 
 Bugs:
+    - Margins
     - Buy Box: Show Variation description
     - Product sidebar doesn't show if no widgets are added.
     - WC nav items are not added before menu is saved.
     - Footer background shows if empty.
     - Footer Columns
-
-    - Change header titles to Category Name, Tag Name etc. (eg. remove "Product categories")
 
 - Cleanup & comment code
 
@@ -34,7 +37,7 @@ Bugs:
 
 - Improve visual flaws
 
-- Customization optionsü
+- Customization options
 
 - License
 
