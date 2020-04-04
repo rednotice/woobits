@@ -22,8 +22,6 @@ support@pixelbase.co
 ..................
 
 Bugs:
-    - Footer background shows if empty.
-    - Footer Columns
     - WC nav items are not added before menu is saved.
 
 - Cleanup & comment code

@@ -197,14 +197,16 @@ function woobits_mobile_menu() {
  * Footer
  */
 function woobits_footer_widgets() {
+    if( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-3') ) :
     ?>
-    <div class="woobits-footer-widgets">
-        <?php if(is_active_sidebar('footer-1')) { dynamic_sidebar('footer-1'); } ?>
-        <?php if(is_active_sidebar('footer-1')) { dynamic_sidebar('footer-2'); } ?>
-        <?php if(is_active_sidebar('footer-1')) { dynamic_sidebar('footer-3'); } ?>
-        <?php if(is_active_sidebar('footer-1')) { dynamic_sidebar('footer-4'); } ?>
-    </div>
+        <div class="woobits-footer-widgets">
+            <?php if( is_active_sidebar('footer-1') ) { dynamic_sidebar('footer-1'); } ?>
+            <?php if( is_active_sidebar('footer-2') ) { dynamic_sidebar('footer-2'); } ?>
+            <?php if( is_active_sidebar('footer-3') ) { dynamic_sidebar('footer-3'); } ?>
+            <?php if( is_active_sidebar('footer-4') ) { dynamic_sidebar('footer-4'); } ?>
+        </div>
     <?php
+    endif;
 }
 
 function woobits_copyright() {
@@ -294,7 +296,6 @@ function woobits_purchase_box_widget() {
              * @hooked woocommerce_template_single_add_to_cart - 30
              */
             do_action('woobits_purchase_box_widget');
-            // do_action('woocommerce_single_product_summary');
             ?>
         </div>
     </aside>
