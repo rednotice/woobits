@@ -7,11 +7,11 @@
 
 .woobits-content {
     @extend .container-fluid;
-    // padding: 2em;
 }
 
 .woobits-row {
     @extend .row;
+    padding: 2em;
 }
 
 #primary {

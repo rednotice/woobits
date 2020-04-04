@@ -9334,6 +9334,9 @@ button, button, .btn, .woobits-header .woobits-product-feature-widget .wrapper .
   justify-content: space-between;
   min-height: 100vh; }
 
+.woobits-row {
+  padding: 2em; }
+
 #primary #main {
   width: 100%; }
 
@@ -9962,6 +9965,9 @@ button, button, .btn, .woobits-header .woobits-product-feature-widget .wrapper .
           width: 50%; } }
     .woobits-404 .wrapper .text {
       margin-bottom: 1em; }
+
+.home .woobits-row {
+  padding: 0; }
 
 .home .woobits-section-1 {
   display: flex;

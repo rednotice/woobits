@@ -5,7 +5,7 @@
  * @package woobits
  */
 
-if( is_active_sidebar( 'product' ) && function_exists( 'is_product') && is_product() ) :
+if( function_exists( 'is_product') && is_product() ) :
 	?>
 	<div id="secondary" class="widget-area product" role="complementary">
 		<?php 
